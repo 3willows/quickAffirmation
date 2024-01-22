@@ -2,13 +2,13 @@
 
 - Quickly prototype an affirmation.
 - Save time by *not* entering deponent name and case number 4-5 times all over the place.
+- Intended users: HK lawyers and clerks.
   
 ## How?
 
-1. Intended users: HK lawyers and clerks.
-2. Fill in the boxes, click "OUTPUT" button.
-3. The heading, endorsement and the backsheet are automatically generated.
-4. Revisions can be made by clicking the "REVISE" button.
+1. Fill in the boxes, click "OUTPUT" button.
+2. The heading, endorsement and the backsheet are automatically generated.
+3. Revisions can be made by clicking the "REVISE" button.
 
 ## TO-DO
 
