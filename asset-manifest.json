@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/quickAffirmationFormat/static/css/main.d8ff91fc.css",
-    "main.js": "/quickAffirmationFormat/static/js/main.33a58efb.js",
-    "static/js/787.08e42bb1.chunk.js": "/quickAffirmationFormat/static/js/787.08e42bb1.chunk.js",
-    "index.html": "/quickAffirmationFormat/index.html",
-    "main.d8ff91fc.css.map": "/quickAffirmationFormat/static/css/main.d8ff91fc.css.map",
-    "main.33a58efb.js.map": "/quickAffirmationFormat/static/js/main.33a58efb.js.map",
-    "787.08e42bb1.chunk.js.map": "/quickAffirmationFormat/static/js/787.08e42bb1.chunk.js.map"
+    "main.css": "/quickAffirmation/static/css/main.d8ff91fc.css",
+    "main.js": "/quickAffirmation/static/js/main.a94c405f.js",
+    "static/js/787.08e42bb1.chunk.js": "/quickAffirmation/static/js/787.08e42bb1.chunk.js",
+    "index.html": "/quickAffirmation/index.html",
+    "main.d8ff91fc.css.map": "/quickAffirmation/static/css/main.d8ff91fc.css.map",
+    "main.a94c405f.js.map": "/quickAffirmation/static/js/main.a94c405f.js.map",
+    "787.08e42bb1.chunk.js.map": "/quickAffirmation/static/js/787.08e42bb1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d8ff91fc.css",
-    "static/js/main.33a58efb.js"
+    "static/js/main.a94c405f.js"
   ]
 }
