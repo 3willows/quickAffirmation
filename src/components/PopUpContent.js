@@ -14,10 +14,7 @@ export const PopUpContent = () => {
         <ul className="go-left">
           <h2>Quick Affirmation</h2>
           <li>
-           Enter data once and it appears in the 4-5 required places. 
-          </li>
-          <li>
-            This webpage is not meant for the mobile phone!
+           Enter data once and it appears in all the places needed (e.g. endorsement and backsheet).
           </li>
           <li>
             Video tutorial:

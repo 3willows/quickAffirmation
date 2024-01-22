@@ -1,24 +1,27 @@
 export function Party({ name, i, side, array }) {
   function getOrdinal(n) {
-    let suffix = ["th", "st", "nd", "rd"]
+    let suffix = ["TH", "ST", "ND", "RD"]
     let v = n % 100
     return n + (suffix[(v - 20) % 10] || suffix[v] || suffix[0])
   }
 
   return (
     <div>
-      {array.length === 1
-        ? `     ${name}  ${side === "P" ? `Plaintiff` : `Defendant`}`
-        : `     ${name} ${getOrdinal(i + 1)} ${
-            side === "P" ? `Plaintiff` : `Defendant`
-          }`}
+      {name}
+      {array.length === 1 ? (
+        <span className="go-right">{`${side === "P" ? "PLAINTIFF" : "DEFENDANT"}`}</span>
+      ) : (
+        <span className="go-right">{`${getOrdinal(i + 1)} ${side === "P" ? "PLAINTIFF" : "DEFENDANT"}`}</span>
+      )}
     </div>
-  )
+  );
+  
 }
 
 export function DisplayParties({ plaintiffs, defendants }) {
   return (
     <div className="go-left">
+      BETWEEN
       <p>
         {plaintiffs.length === 0 && `[Plaintiff]`}
         {plaintiffs.map((party, iterator) => (

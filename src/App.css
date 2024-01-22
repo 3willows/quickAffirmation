@@ -1,42 +1,28 @@
+body {
+  background-color: #333;
+  /* Dark background color for the entire page */
+  color: white;
+  /* Text color */
+  font-family: 'Times New Roman', serif;
+  /* Set font to Times New Roman */
+  margin: 0 5%;
+  /* Add 5% margin on the left and right sides */
+
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+select {
+  width: auto;
+  /* Set the height of select boxes */
+  padding: 5px 5px;
+  /* Add padding for better visual appearance */
+  font-size: 14px;
+  /* Adjust font size for select boxes */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
 
 .top-right {
   text-align: right;
@@ -46,19 +32,47 @@
   text-align: left;
 }
 
+.go-right {
+  position: absolute;
+  right: 5%;
+}
+
 .flex-outside {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  /* Align flex items in the same horizontal space */
+  flex-wrap: wrap;
+  /* Allow flex items to wrap on smaller screens */
 }
 
 .flex-box {
   text-align: left;
+  margin: 10px;
+  /* Responsive width using clamp */
+}
+
+@media only screen and (max-width: 1000px) {
+  /* Styles for small screens */
+
+  .flex-outside {
+    justify-content: center;
+  }
+
+  .flex-box {
+    text-align: center;
+    /* Center text within flex-box */
+    margin: 10px;
+    width: 100%;
+    /* Full width on small screens */
+  }
 }
 
 .affirm-box {
   display: inline-block;
-  border-top: 2px solid black;
-  border-bottom: 2px solid black;
+  border-top: 2px solid white;
+  /* Adjust border color to match text color */
+  border-bottom: 2px solid white;
+  /* Adjust border color to match text color */
 }
 
 /* Add modal styles to your CSS */
@@ -75,7 +89,7 @@
 }
 
 .modal-content {
-  background: white;
+  background: gray;
   padding: 20px;
   border-radius: 8px;
   position: relative;
@@ -86,6 +100,7 @@
   top: 10px;
   right: 10px;
   font-size: 20px;
+  color: black;
+  /* Adjust close button color to improve visibility */
   cursor: pointer;
 }
-
