@@ -17,8 +17,8 @@
 ## DONE
 
 - [x] Deploy react version
-- [x] Think through the treatment of uppercase characters (i.e. use toUpperCase() consistently
-- [x] Add pop-up to explain the minimalist hilosophy behind the webpage.
+- [x] Think through the treatment of uppercase characters (i.e. use toUpperCase() consistently)
+- [x] Add pop-up.
 - [x] After input for P/D accepted, empty the relevant text input box
 - [x] Style with CSS: including moving the Plaintiffs/Defendants to the right.
 
