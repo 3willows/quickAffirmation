@@ -13,17 +13,20 @@
 
 ## TO-DO
 
-- [x] Deploy react version
 - [ ] After input for P/D accepted, empty the relevant text input box
-- [ ] Think through the treatment of uppercase characters (i.e. use toUpperCase() consistently
 - [ ] Style with better CSS
 - [ ] Media query and alert users that the App is not intended to be used on mobile phones
 - [ ] Add pop-up to explain the minimalist hilosophy behind the webpage.
 - [ ] Add video to explain how to use.
+      
+## DONE
+
+- [x] Deploy react version
+- [x] Think through the treatment of uppercase characters (i.e. use toUpperCase() consistently
+- [x] Add pop-up to explain the minimalist hilosophy behind the webpage.
 
 ## Non-features
-- [ ] Reminder about jurat rule
-- [ ] Other case names/parties (e.g. HCZZ, Third Party)
+- Reminder about jurat rule
       
 ## Potential future projects
 
