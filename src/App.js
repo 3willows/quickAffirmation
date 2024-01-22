@@ -51,9 +51,32 @@ function App() {
   const [inputOpen, setInputOpen] = useState(true)
   function toggleInputOpen(inputOpen) {
     setInputOpen((inputOpen) => !inputOpen)
+    scrollToTop()
   }
-  const handleFocus = (event) => event.target.select();
+  const handleFocus = (event) => event.target.select()
 
+  // scroll to top
+  const [visible, setVisible] = useState(false)
+
+  const toggleVisible = () => {
+    const scrolled = document.documentElement.scrollTop
+    if (scrolled > 300) {
+      setVisible(true)
+    } else if (scrolled <= 300) {
+      setVisible(false)
+    }
+  }
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "auto",
+      /* you can also use 'auto' behaviour 
+       in place of 'smooth' */
+    })
+  }
+
+  window.addEventListener("scroll", toggleVisible)
 
   return (
     <div className="App">
@@ -111,7 +134,7 @@ function App() {
             setAffirmAddress={setAffirmAddress}
             setIndependentSolicitor={setIndependentSolicitor}
             handleFocus={handleFocus}
-            />
+          />
         </div>
       )}
       {!inputOpen && (
