@@ -32,7 +32,8 @@ export function Parties({
 
   const handleRemoveParty = (e) => {
     e.preventDefault()
-    removeParty(side, toRemove.toUpperCase())
+    removeParty(toRemove.toUpperCase())
+    setNewParty({ name: "" })
   }
 
   return (
@@ -49,15 +50,14 @@ export function Parties({
               onChange={handleInputChange}
             ></input>
           </form>
-
-          <form onSubmit={handleRemoveParty} onChange={() => setSide("P")}>
-            <button> Delete P </button>
+          <form onSubmit={handleRemoveParty}>
+            <button> Delete </button>
             <input
               type="text"
               onChange={(e) => setToRemove(e.target.value.toUpperCase())}
-              value={side === "P" ? toRemove : ""}
+              value={toRemove}
             ></input>
-          </form>
+          </form>{" "}
         </div>
 
         <div style={{ flex: "0 0 33.33%" }}></div>
@@ -70,16 +70,7 @@ export function Parties({
               value={side === "D" ? newParty.name : ""}
               onChange={handleInputChange}
             ></input>
-          </form>
-
-          <form onSubmit={handleRemoveParty} onChange={() => setSide("D")}>
-            <button > Delete D </button>
-            <input
-              type="text"
-              onChange={(e) => setToRemove(e.target.value.toUpperCase())}
-              value={side === "D" ? toRemove : ""}
-            ></input>
-          </form>
+          </form>{" "}
         </div>
       </div>
     </div>

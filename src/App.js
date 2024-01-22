@@ -30,17 +30,14 @@ function App() {
   function addDefendants(newP) {
     setDefendants((defendants) => [...defendants, newP])
   }
-  function removeParty(side, toRemove) {
-    if (side === "P") {
-      setPlaintiffs((parties) =>
-        parties.filter((party) => party.name !== toRemove)
-      )
-    }
-    if (side === "D") {
-      setDefendants((parties) =>
-        parties.filter((party) => party.name !== toRemove)
-      )
-    }
+  function removeParty(toRemove) {
+    setPlaintiffs((parties) =>
+      parties.filter((party) => party.name !== toRemove)
+    )
+
+    setDefendants((parties) =>
+      parties.filter((party) => party.name !== toRemove)
+    )
   }
   // End matters
   const [partyName, setPartyName] = useState("Plaintiff")
@@ -134,7 +131,7 @@ export default App
 
 function ToggleButtons({ inputOpen, toggleInputOpen }) {
   return (
-    <div >
+    <div>
       <button className="large-button" onClick={toggleInputOpen}>
         {inputOpen ? `OUTPUT` : `REVISE`}
       </button>
