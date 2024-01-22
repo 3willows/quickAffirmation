@@ -13,7 +13,7 @@ export function Parties({
   const [toRemove, setToRemove] = useState("")
 
   const handleInputChange = (e) => {
-    setNewParty({ name: e.target.value })
+    setNewParty({ name: e.target.value.toUpperCase() })
   }
 
   const handleAddParty = (e) => {
@@ -32,7 +32,7 @@ export function Parties({
 
   const handleRemoveParty = (e) => {
     e.preventDefault()
-    removeParty(side, toRemove)
+    removeParty(side, toRemove.toUpperCase())
   }
 
   return (

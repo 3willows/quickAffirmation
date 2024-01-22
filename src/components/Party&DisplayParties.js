@@ -8,8 +8,8 @@ export function Party({ name, i, side, array }) {
   return (
     <div>
       {array.length === 1
-        ? `     ${name.toUpperCase()}  ${side === "P" ? `Plaintiff` : `Defendant`}`
-        : `     ${name.toUpperCase()} ${getOrdinal(i + 1)} ${
+        ? `     ${name}  ${side === "P" ? `Plaintiff` : `Defendant`}`
+        : `     ${name} ${getOrdinal(i + 1)} ${
             side === "P" ? `Plaintiff` : `Defendant`
           }`}
     </div>
