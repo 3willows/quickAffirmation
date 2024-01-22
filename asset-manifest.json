@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/quickAffirmationFormat/static/css/main.328d11aa.css",
+    "main.js": "/quickAffirmationFormat/static/js/main.ea45bb65.js",
+    "static/js/787.08e42bb1.chunk.js": "/quickAffirmationFormat/static/js/787.08e42bb1.chunk.js",
+    "index.html": "/quickAffirmationFormat/index.html",
+    "main.328d11aa.css.map": "/quickAffirmationFormat/static/css/main.328d11aa.css.map",
+    "main.ea45bb65.js.map": "/quickAffirmationFormat/static/js/main.ea45bb65.js.map",
+    "787.08e42bb1.chunk.js.map": "/quickAffirmationFormat/static/js/787.08e42bb1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.328d11aa.css",
+    "static/js/main.ea45bb65.js"
+  ]
+}
