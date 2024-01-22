@@ -14,6 +14,9 @@ body {
 
 }
 
+.digital{
+  width: 60px;
+}
 @media only screen and (max-width: 300px) {
 
   /* Font size for screens smaller than 768px (e.g., mobile screens) */
@@ -23,17 +26,20 @@ body {
 }
 
 select {
-  width: auto;
+  max-width: 80%;
   /* Set the height of select boxes */
   padding: 5px 5px;
   /* Add padding for better visual appearance */
   font-size: 14px;
   /* Adjust font size for select boxes */
+  vertical-align: top;
+  /* or middle */
 }
 
 input,
 button {
   font-size: 22px;
+  text-align: center;
 }
 
 .top-right {
@@ -119,7 +125,7 @@ button {
   cursor: pointer;
 }
 
-button {
+select, button {
   display: inline-block;
   text-align: center;
   text-decoration: none;

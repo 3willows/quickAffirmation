@@ -22,7 +22,7 @@ export function DisplayParties({ plaintiffs, defendants }) {
   return (
     <div className="go-left">
       BETWEEN
-      <p>
+      <div>
         {plaintiffs.length === 0 && <div>[Plaintiff]<span className="go-right">PLAINTIFF</span></div> }
         {plaintiffs.map((party, iterator) => (
           <Party
@@ -33,7 +33,7 @@ export function DisplayParties({ plaintiffs, defendants }) {
             key={party.name}
           />
         ))}
-      </p>
+      </div>
       <p>AND</p>
       <div>
         {defendants.length === 0 && <div>[Defendant]<span className="go-right">DEFENDANT</span></div>}

@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { DisplayParties } from "./Party&DisplayParties"
 
 export function Parties({
@@ -11,6 +11,7 @@ export function Parties({
   const [newParty, setNewParty] = useState({ name: "" })
   const [side, setSide] = useState("P")
   const [toRemove, setToRemove] = useState("")
+  const parties = [{ name: "SELECT PARTY" }, ...plaintiffs, ...defendants]
 
   const handleInputChange = (e) => {
     setNewParty({ name: e.target.value.toUpperCase() })
@@ -22,7 +23,6 @@ export function Parties({
     if (!newParty || !newParty.name) {
       return
     }
-    const parties = [...plaintiffs, ...defendants]
     if (parties.some((obj) => obj.name === newParty.name)) return
 
     side === "P" && addPlaintiffs(newParty)
@@ -33,7 +33,6 @@ export function Parties({
   const handleRemoveParty = (e) => {
     e.preventDefault()
     removeParty(toRemove.toUpperCase())
-    setNewParty({ name: "" })
   }
 
   return (
@@ -52,15 +51,18 @@ export function Parties({
           </form>
         </div>
 
-        <div className="flex-box ">
+        <div className="flex-box">
           <form onSubmit={handleRemoveParty}>
-            <button> Delete </button>
-            <input
-              type="text"
-              onChange={(e) => setToRemove(e.target.value.toUpperCase())}
+            <button type="submit">Delete</button>
+            <select
               value={toRemove}
-            ></input>
-          </form>{" "}
+              onChange={(e) => setToRemove(e.target.value.toUpperCase())}
+            >
+              {parties.map((party) => (
+                <PartyName name={party.name} key={party.name} />
+              ))}
+            </select>
+          </form>
         </div>
 
         <div className="flex-box ">
@@ -76,4 +78,8 @@ export function Parties({
       </div>
     </div>
   )
+}
+
+function PartyName({ name }) {
+  return <option value={name}>{name}</option>
 }

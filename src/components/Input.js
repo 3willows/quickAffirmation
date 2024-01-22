@@ -7,11 +7,12 @@ export function AffirmationTitle({
   setDeponentName,
 }) {
   return (
-    <div div className="affirm-box">
+    <div className="affirm-box">
       <input
         type="text"
         value={affirmNumber}
         onChange={(e) => setAffirmNumber(e.target.value)}
+        className="digital"
       ></input>
       AFFIRMATION OF
       <input
@@ -51,13 +52,15 @@ export function Heading({
         type="text"
         value={caseDigit}
         onChange={(e) => setCaseDigit(e.target.value)}
+        className="digital"
       ></input>
       OF
       <input
         type="text"
         value={caseYear}
         onChange={(e) => setCaseYear(e.target.value)}
-      ></input>
+        className="digital"
+        ></input>
     </div>
   )
 }
