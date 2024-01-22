@@ -38,32 +38,46 @@ export function Parties({
   return (
     <div className="go-left">
       <DisplayParties plaintiffs={plaintiffs} defendants={defendants} />
+
       <div className="flex-outside">
         <div className="flex-box ">
-          <form onSubmit={handleAddParty}>
-            <button onClick={() => setSide("P")}> Add P </button>
-            <input type="text" onChange={handleInputChange}></input>
-          </form>
-          <form onSubmit={handleRemoveParty}>
-            <button onClick={() => setSide("P")}> Delete P </button>
+          <form onSubmit={handleAddParty} onChange={() => setSide("P")}>
+            <button> Add P </button>
             <input
               type="text"
-              onChange={(e) => setToRemove(e.target.value)}
+              value={side === "P" ? newParty.name : ""}
+              onChange={handleInputChange}
+            ></input>
+          </form>
+
+          <form onSubmit={handleRemoveParty} onChange={() => setSide("P")}>
+            <button> Delete P </button>
+            <input
+              type="text"
+              onChange={(e) => setToRemove(e.target.value.toUpperCase())}
+              value={side === "P" ? toRemove : ""}
             ></input>
           </form>
         </div>
-        <div style={{ flex: '0 0 33.33%' }}></div>
+
+        <div style={{ flex: "0 0 33.33%" }}></div>
 
         <div className="flex-box ">
           <form onSubmit={handleAddParty} onChange={() => setSide("D")}>
-            <button onClick={() => setSide("D")}> Add D </button>
-            <input type="text" onChange={handleInputChange}></input>
-          </form>
-          <form onSubmit={handleRemoveParty}>
-            <button onClick={() => setSide("D")}> Delete D </button>
+            <button> Add D </button>
             <input
               type="text"
-              onChange={(e) => setToRemove(e.target.value)}
+              value={side === "D" ? newParty.name : ""}
+              onChange={handleInputChange}
+            ></input>
+          </form>
+
+          <form onSubmit={handleRemoveParty} onChange={() => setSide("D")}>
+            <button > Delete D </button>
+            <input
+              type="text"
+              onChange={(e) => setToRemove(e.target.value.toUpperCase())}
+              value={side === "D" ? toRemove : ""}
             ></input>
           </form>
         </div>
