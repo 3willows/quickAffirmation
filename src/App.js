@@ -1,10 +1,11 @@
 import "./App.css"
-import { useState } from "react"
+import React, { useState } from "react"
 import { Heading, AffirmationTitle, EndMatters } from "./components/Input"
 import { TopRight } from "./components/TopRight"
 import { Output } from "./components/Output"
 import { Parties } from "./components/Parties"
 import { formattedDate } from "./components/TodayDate"
+import { YourComponent } from "./components/YourComponent"
 
 const initialPs = []
 const initialDs = []
@@ -57,6 +58,7 @@ function App() {
 
   return (
     <div className="App">
+      <YourComponent />
       {inputOpen && (
         <div className="inputComponents">
           <TopRight

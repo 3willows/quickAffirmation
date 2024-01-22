@@ -33,13 +33,21 @@ export function Heading({
   return (
     <div>
       <FullHeading />
-      HIGH COURT
       <select value={caseType} onChange={(e) => setCaseType(e.target.value)}>
         <option value="ACTION">ACTION</option>
         <option value="MISCELLANEOUS PROCEEDINGS">
           MISCELLANEOUS PROCEEDINGS
         </option>
         <option value="BANKRUPTCY">BANKRUPTCY</option>
+        <option value="INTENDED ACTION">INTENDED ACTION</option>
+        <option value="APPLICATION TO SET ASIDE A STATUTORY DEMAND">
+          APPLICATION TO SET ASIDE A STATUTORY DEMAND
+        </option>
+        <option value="PROBATE ACTION">PROBATE ACTION </option>
+        <option value="COMPANIES (WINDING-UP) PROCEEDINGS">
+          COMPANIES (WINDING-UP) PROCEEDINGS
+        </option>
+        <option value="MENTAL HEALTH CASE">MENTAL HEALTH CASE</option>
       </select>
       <input
         type="text"
