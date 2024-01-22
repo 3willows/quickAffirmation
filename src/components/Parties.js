@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { DisplayParties } from "./CommonParty"
+import { DisplayParties } from "./Party&DisplayParties"
 
 export function Parties({
   plaintiffs,
@@ -8,7 +8,7 @@ export function Parties({
   addDefendants,
   removeParty,
 }) {
-  const [newParty, setNewParty] = useState(null)
+  const [newParty, setNewParty] = useState({ name: "" })
   const [side, setSide] = useState("P")
   const [toRemove, setToRemove] = useState("")
 
@@ -27,33 +27,47 @@ export function Parties({
 
     side === "P" && addPlaintiffs(newParty)
     side === "D" && addDefendants(newParty)
+    setNewParty({ name: "" })
   }
 
   const handleRemoveParty = (e) => {
     e.preventDefault()
-    console.log(toRemove)
     removeParty(side, toRemove)
   }
 
   return (
     <div className="go-left">
       <DisplayParties plaintiffs={plaintiffs} defendants={defendants} />
-      <form onSubmit={handleAddParty}>
-        <button onClick={() => setSide("P")}> Add Plaintiff </button>
-        <input type="text" onChange={handleInputChange}></input>
-      </form>
-      <form onSubmit={handleRemoveParty}>
-        <button onClick={() => setSide("P")}> Delete Plaintiff </button>
-        <input type="text" onChange={e => setToRemove(e.target.value)}></input>
-      </form>
-      <form onSubmit={handleAddParty}>
-        <button onClick={() => setSide("D")}> Add Defendant </button>
-        <input type="text" onChange={handleInputChange}></input>
-      </form>
-      <form onSubmit={handleRemoveParty}>
-        <button onClick={() => setSide("D")}> Delete Plaintiff </button>
-        <input type="text" onChange={e => setToRemove(e.target.value)}></input>
-      </form>
+      <div className="flex-outside">
+        <div className="flex-box ">
+          <form onSubmit={handleAddParty}>
+            <button onClick={() => setSide("P")}> Add P </button>
+            <input type="text" onChange={handleInputChange}></input>
+          </form>
+          <form onSubmit={handleRemoveParty}>
+            <button onClick={() => setSide("P")}> Delete P </button>
+            <input
+              type="text"
+              onChange={(e) => setToRemove(e.target.value)}
+            ></input>
+          </form>
+        </div>
+        <div style={{ flex: '0 0 33.33%' }}></div>
+
+        <div className="flex-box ">
+          <form onSubmit={handleAddParty} onChange={() => setSide("D")}>
+            <button onClick={() => setSide("D")}> Add D </button>
+            <input type="text" onChange={handleInputChange}></input>
+          </form>
+          <form onSubmit={handleRemoveParty}>
+            <button onClick={() => setSide("D")}> Delete D </button>
+            <input
+              type="text"
+              onChange={(e) => setToRemove(e.target.value)}
+            ></input>
+          </form>
+        </div>
+      </div>
     </div>
   )
 }

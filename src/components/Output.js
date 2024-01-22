@@ -1,6 +1,6 @@
 import { TopRight } from "./TopRight"
 import { FullHeading } from "./FullHeading"
-import { DisplayParties } from "./CommonParty"
+import { DisplayParties } from "./Party&DisplayParties"
 
 export function Output({
   caseType,
