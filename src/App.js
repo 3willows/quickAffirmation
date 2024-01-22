@@ -18,7 +18,7 @@ function App() {
 
   // 1st Affirmation of Ming
   const [affirmNumber, setAffirmNumber] = useState("1st")
-  const [deponentName, setDeponentName] = useState("[DEPONENT]")
+  const [deponentName, setDeponentName] = useState("[Deponent]")
 
   //Parties
   const [plaintiffs, setPlaintiffs] = useState(initialPs)
