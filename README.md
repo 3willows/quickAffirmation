@@ -14,7 +14,7 @@
 ## TO-DO
 
 - [ ] After input for P/D accepted, empty the relevant text input box
-- [ ] Style with better CSS
+- [ ] Style with better CSS: including moving the Plaintiffs/Defendants to the right.
 - [ ] Media query and alert users that the App is not intended to be used on mobile phones
 - [ ] Add pop-up to explain the minimalist hilosophy behind the webpage.
 - [ ] Add video to explain how to use.
