@@ -50,6 +50,9 @@ export function Parties({
               onChange={handleInputChange}
             ></input>
           </form>
+        </div>
+
+        <div className="flex-box ">
           <form onSubmit={handleRemoveParty}>
             <button> Delete </button>
             <input
@@ -59,8 +62,6 @@ export function Parties({
             ></input>
           </form>{" "}
         </div>
-
-        <div style={{ flex: "0 0 33.33%" }}></div>
 
         <div className="flex-box ">
           <form onSubmit={handleAddParty} onChange={() => setSide("D")}>

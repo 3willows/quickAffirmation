@@ -17,7 +17,7 @@ body {
 @media only screen and (max-width: 300px) {
 
   /* Font size for screens smaller than 768px (e.g., mobile screens) */
-  body, input, button {
+  * {
     font-size: 14px;
   }
 }
@@ -31,7 +31,8 @@ select {
   /* Adjust font size for select boxes */
 }
 
-input, button {
+input,
+button {
   font-size: 22px;
 }
 
@@ -118,27 +119,35 @@ input, button {
   cursor: pointer;
 }
 
-/* Define styles for the large button */
-.large-button {
+button {
   display: inline-block;
-  padding: 15px 30px;
-  font-size: 18px;
   text-align: center;
   text-decoration: none;
-  background-color: #666b66; /* Green background color */
-  color: white; /* White text color */
-  border-radius: 8px; /* Rounded corners */
+  background-color: #666b66;
+  /* Green background color */
+  color: white;
+  /* White text color */
+  border-radius: 8px;
+  /* Rounded corners */
   cursor: pointer;
 }
 
+/* Define styles for the large button */
+
 /* Hover effect */
-.large-button:hover {
+button:hover {
   background-color: #b7bab7;
-  color: black; 
+  color: black;
 }
 
 /* Active effect */
-.large-button:active {
+button:active {
   background-color: #666b66;
-  color: black; /* Green background color */ 
+  color: black;
+  /* Green background color */
+}
+
+.large-button {
+  padding: 15px 30px;
+  font-size: 18px;
 }
