@@ -7,9 +7,9 @@ export function Party({ name, i, side, array }) {
 
   return (
     <div>
-      {name}
+    &ensp; {name}
       {array.length === 1 ? (
-        <span className="go-right">{`${side === "P" ? "PLAINTIFF" : "DEFENDANT"}`}</span>
+       <span className="go-right">{`${side === "P" ? "PLAINTIFF" : "DEFENDANT"}`}</span>
       ) : (
         <span className="go-right">{`${getOrdinal(i + 1)} ${side === "P" ? "PLAINTIFF" : "DEFENDANT"}`}</span>
       )}
@@ -22,8 +22,9 @@ export function DisplayParties({ plaintiffs, defendants }) {
   return (
     <div className="go-left">
       BETWEEN
+      <p></p>
       <div>
-        {plaintiffs.length === 0 && <div>[Plaintiff]<span className="go-right">PLAINTIFF</span></div> }
+        {plaintiffs.length === 0 && <div> &ensp; [Plaintiff]<span className="go-right">PLAINTIFF</span></div> }
         {plaintiffs.map((party, iterator) => (
           <Party
             name={party.name}
@@ -36,7 +37,7 @@ export function DisplayParties({ plaintiffs, defendants }) {
       </div>
       <p>AND</p>
       <div>
-        {defendants.length === 0 && <div>[Defendant]<span className="go-right">DEFENDANT</span></div>}
+        {defendants.length === 0 && <div> &ensp; [Defendant]<span className="go-right">DEFENDANT</span></div>}
         {defendants.map((party, iterator) => (
           <Party
             name={party.name}
