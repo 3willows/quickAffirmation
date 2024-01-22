@@ -59,12 +59,14 @@ export function Output({
         defendants={defendants}
         partyName={partyName}
       />
-      <div className="flex-outside">
-        <div className="flex-box">
+      <div className="backsheet-outside">
+        <div className="backsheet-box"></div>
+        <div className="backsheet-box">
           <p>Affirmed on {date}</p>
           <p>Filed on </p>
           <p> This affirmation is filed on behalf of the {" "}{partyName}.</p>
         </div>
+        <div className="backsheet-box"></div>
       </div>
       <p>[Your firm name]</p>
       <p>Solicitors for {partyName}</p>

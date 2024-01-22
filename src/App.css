@@ -14,9 +14,10 @@ body {
 
 }
 
-.digital{
+.digital {
   width: 60px;
 }
+
 @media only screen and (max-width: 300px) {
 
   /* Font size for screens smaller than 768px (e.g., mobile screens) */
@@ -24,7 +25,7 @@ body {
     font-size: 14px;
   }
 
-  body{
+  body {
     margin: 5% 5%;
   }
 }
@@ -74,20 +75,17 @@ option {
   margin: 2%;
 }
 
-@media only screen and (max-width: 1000px) {
-  /* Styles for small screens */
+.backsheet-outside {
+  display: flex;
+  justify-content: center;
+}
 
-  .flex-outside {
-    justify-content: center;
-  }
-
-  .flex-box {
-    text-align: center;
-    /* Center text within flex-box */
-    margin: 10px;
-    width: 100%;
-    /* Full width on small screens */
-  }
+.backsheet-box {
+  text-align: left;
+  /* Center text within flex-box */
+  margin: 10px;
+  width: 100%;
+  /* Full width on small screens */
 }
 
 .affirm-box {
@@ -130,7 +128,8 @@ option {
   cursor: pointer;
 }
 
-select, button {
+select,
+button {
   display: inline-block;
   text-align: center;
   text-decoration: none;
