@@ -23,6 +23,10 @@ body {
   * {
     font-size: 14px;
   }
+
+  body{
+    margin: 5% 5%;
+  }
 }
 
 select {
@@ -40,7 +44,6 @@ input,
 button {
   font-size: 22px;
   text-align: center;
-  margin: 3% 3%;
 }
 
 .top-right {
