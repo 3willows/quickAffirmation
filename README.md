@@ -13,10 +13,7 @@
 
 ## TO-DO
 
-- [ ] After input for P/D accepted, empty the relevant text input box
 - [ ] Style with better CSS: including moving the Plaintiffs/Defendants to the right.
-- [ ] Media query and alert users that the App is not intended to be used on mobile phones
-- [ ] Add pop-up to explain the minimalist hilosophy behind the webpage.
 - [ ] Add video to explain how to use.
       
 ## DONE
@@ -24,10 +21,12 @@
 - [x] Deploy react version
 - [x] Think through the treatment of uppercase characters (i.e. use toUpperCase() consistently
 - [x] Add pop-up to explain the minimalist hilosophy behind the webpage.
+- [x] After input for P/D accepted, empty the relevant text input box
 
 ## Non-features
 - Reminder about jurat rule
-      
+- Media query and alert users that the App is not intended to be used on mobile phones
+
 ## Potential future projects
 
 - App to help lawyers calculate dates in civil litigation (there are at least 3 different rules for reckoning of dates).
