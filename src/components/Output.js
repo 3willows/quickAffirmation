@@ -17,7 +17,7 @@ export function Output({
 }) {
   return (
     <div className="backsheet">
-      ***** FIRST PAGE ******
+      ***** BODY ******
       <CommonHeading
         caseType={caseType}
         caseDigit={caseDigit}

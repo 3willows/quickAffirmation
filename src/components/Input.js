@@ -5,6 +5,7 @@ export function AffirmationTitle({
   setAffirmNumber,
   deponentName,
   setDeponentName,
+  handleFocus,
 }) {
   return (
     <div className="affirm-box">
@@ -13,12 +14,14 @@ export function AffirmationTitle({
         value={affirmNumber}
         onChange={(e) => setAffirmNumber(e.target.value)}
         className="digital"
+        onFocus={handleFocus}
       ></input>
       AFFIRMATION OF
       <input
         type="text"
         value={deponentName}
         onChange={(e) => setDeponentName(e.target.value)}
+        onFocus={handleFocus}
       ></input>
     </div>
   )
@@ -30,6 +33,7 @@ export function Heading({
   setCaseDigit,
   caseYear,
   setCaseYear,
+  handleFocus,
 }) {
   return (
     <div>
@@ -53,6 +57,7 @@ export function Heading({
         value={caseDigit}
         onChange={(e) => setCaseDigit(e.target.value)}
         className="digital"
+        onFocus={handleFocus}
       ></input>
       OF
       <input
@@ -60,7 +65,8 @@ export function Heading({
         value={caseYear}
         onChange={(e) => setCaseYear(e.target.value)}
         className="digital"
-        ></input>
+        onFocus={handleFocus}
+      ></input>
     </div>
   )
 }
@@ -73,6 +79,7 @@ export function EndMatters({
   setIndependentSolicitor,
   partyName,
   setPartyName,
+  handleFocus,
 }) {
   return (
     <div className="go-left">
@@ -82,7 +89,8 @@ export function EndMatters({
           type="text"
           value={partyName}
           onChange={(e) => setPartyName(e.target.value)}
-        ></input>
+          onFocus={handleFocus}
+          ></input>
         .
       </p>
       <p>
@@ -91,7 +99,8 @@ export function EndMatters({
           type="text"
           value={date}
           onChange={(e) => setDate(e.target.value)}
-        ></input>
+          onFocus={handleFocus}
+          ></input>
         .
       </p>
     </div>

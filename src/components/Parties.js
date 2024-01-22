@@ -7,6 +7,7 @@ export function Parties({
   addPlaintiffs,
   addDefendants,
   removeParty,
+  handleFocus
 }) {
   const [newParty, setNewParty] = useState({ name: "" })
   const [side, setSide] = useState("P")

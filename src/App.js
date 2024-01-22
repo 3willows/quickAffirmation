@@ -52,10 +52,13 @@ function App() {
   function toggleInputOpen(inputOpen) {
     setInputOpen((inputOpen) => !inputOpen)
   }
+  const handleFocus = (event) => event.target.select();
+
 
   return (
     <div className="App">
       <PopUpContent />
+
       {inputOpen && (
         <div className="inputComponents">
           <TopRight
@@ -74,6 +77,7 @@ function App() {
             setCaseType={setCaseType}
             setCaseDigit={setCaseDigit}
             setCaseYear={setCaseYear}
+            handleFocus={handleFocus}
           />
           <Parties
             plaintiffs={plaintiffs}
@@ -81,12 +85,14 @@ function App() {
             addPlaintiffs={addPlaintiffs}
             addDefendants={addDefendants}
             removeParty={removeParty}
+            handleFocus={handleFocus}
           />
           <AffirmationTitle
             affirmNumber={affirmNumber}
             deponentName={deponentName}
             setAffirmNumber={setAffirmNumber}
             setDeponentName={setDeponentName}
+            handleFocus={handleFocus}
           />
           <p className="go-left">
             I, {deponentName}, of [address] do solemnly, truthfully and
@@ -104,7 +110,8 @@ function App() {
             setDate={setDate}
             setAffirmAddress={setAffirmAddress}
             setIndependentSolicitor={setIndependentSolicitor}
-          />
+            handleFocus={handleFocus}
+            />
         </div>
       )}
       {!inputOpen && (
