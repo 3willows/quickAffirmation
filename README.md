@@ -7,7 +7,7 @@
 ## How?
 
 1. Fill in the boxes, click "OUTPUT" button.
-2. The heading, endorsement and the backsheet are automatically generated.
+2. The heading, endorsement and  backsheet are automatically generated.
 3. Revisions can be made by clicking the "REVISE" button.
 
 ## TO-DO
