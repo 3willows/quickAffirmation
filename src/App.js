@@ -5,7 +5,7 @@ import { TopRight } from "./components/TopRight"
 import { Output } from "./components/Output"
 import { Parties } from "./components/Parties"
 import { formattedDate } from "./components/TodayDate"
-import { YourComponent } from "./components/YourComponent"
+import { PopUpContent } from "./components/PopUpContent"
 
 const initialPs = []
 const initialDs = []
@@ -58,7 +58,7 @@ function App() {
 
   return (
     <div className="App">
-      <YourComponent />
+      <PopUpContent />
       {inputOpen && (
         <div className="inputComponents">
           <TopRight

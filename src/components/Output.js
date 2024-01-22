@@ -100,7 +100,7 @@ function CommonHeading({
       />
       <div>
         <FullHeading />
-        {caseType} {caseDigit} OF {caseYear}
+        {caseType} NO. {caseDigit} OF {caseYear}
       </div>
       <DisplayParties plaintiffs={plaintiffs} defendants={defendants} />
       <div className="affirm-box">

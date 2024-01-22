@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import Modal from "./Modal"
 
-export const YourComponent = () => {
+export const PopUpContent = () => {
   const [isModalOpen, setIsModalOpen] = useState(true)
 
   const closeModal = () => {
@@ -15,6 +15,9 @@ export const YourComponent = () => {
           <h2>Quick Affirmation</h2>
           <li>
            Enter data once and it appears in the 4-5 required places. 
+          </li>
+          <li>
+            This webpage is not meant for the mobile phone!
           </li>
           <li>
             Video tutorial:

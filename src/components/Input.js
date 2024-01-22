@@ -49,6 +49,7 @@ export function Heading({
         </option>
         <option value="MENTAL HEALTH CASE">MENTAL HEALTH CASE</option>
       </select>
+      NO. 
       <input
         type="text"
         value={caseDigit}
