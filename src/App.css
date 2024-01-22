@@ -41,7 +41,8 @@ select {
 }
 
 input,
-button {
+button,
+option {
   font-size: 22px;
   text-align: center;
 }
