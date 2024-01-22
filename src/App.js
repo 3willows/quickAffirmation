@@ -91,7 +91,7 @@ function App() {
             setAffirmNumber={setAffirmNumber}
             setDeponentName={setDeponentName}
           />
-          <p>
+          <p className="go-left">
             I, {deponentName}, of [address] do solemnly, truthfully and
             sincerely affirm and say as follows:-
           </p>
@@ -134,8 +134,8 @@ export default App
 
 function ToggleButtons({ inputOpen, toggleInputOpen }) {
   return (
-    <div>
-      <button onClick={toggleInputOpen}>
+    <div >
+      <button className="large-button" onClick={toggleInputOpen}>
         {inputOpen ? `OUTPUT` : `INPUT`}
       </button>
     </div>

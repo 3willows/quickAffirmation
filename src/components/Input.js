@@ -35,9 +35,6 @@ export function Heading({
       <FullHeading />
       <select value={caseType} onChange={(e) => setCaseType(e.target.value)}>
         <option value="ACTION">ACTION</option>
-        <option value="APPLICATION TO SET ASIDE A STATUTORY DEMAND">
-          APPLICATION TO SET ASIDE A STATUTORY DEMAND
-        </option>
         <option value="BANKRUPTCY">BANKRUPTCY</option>
         <option value="COMPANIES (WINDING-UP) PROCEEDINGS">
           COMPANIES (WINDING-UP) PROCEEDINGS

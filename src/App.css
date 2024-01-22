@@ -5,13 +5,21 @@ body {
   /* Text color */
   font-family: 'Times New Roman', serif;
   /* Set font to Times New Roman */
-  margin: 0 5%;
+  font-size: 22px;
+  /* Default font size for computer screens */
+  text-align: center;
+
+  margin: 5% 5%;
   /* Add 5% margin on the left and right sides */
 
 }
 
-.App {
-  text-align: center;
+@media only screen and (max-width: 300px) {
+
+  /* Font size for screens smaller than 768px (e.g., mobile screens) */
+  body, input, button {
+    font-size: 14px;
+  }
 }
 
 select {
@@ -23,12 +31,16 @@ select {
   /* Adjust font size for select boxes */
 }
 
+input, button {
+  font-size: 22px;
+}
 
 .top-right {
   text-align: right;
 }
 
 .go-left {
+  margin: 2%;
   text-align: left;
 }
 
@@ -47,8 +59,7 @@ select {
 
 .flex-box {
   text-align: left;
-  margin: 10px;
-  /* Responsive width using clamp */
+  margin: 2%;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -77,11 +88,9 @@ select {
 
 /* Add modal styles to your CSS */
 .modal-overlay {
+  z-index: 1000;
+  margin: 5% 5%;
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
@@ -91,6 +100,7 @@ select {
 .modal-content {
   background: gray;
   padding: 20px;
+  font-size: 30px;
   border-radius: 8px;
   position: relative;
 }
@@ -99,8 +109,33 @@ select {
   position: absolute;
   top: 10px;
   right: 10px;
-  font-size: 20px;
+  font-size: 40px;
   color: black;
   /* Adjust close button color to improve visibility */
   cursor: pointer;
+}
+
+/* Define styles for the large button */
+.large-button {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  background-color: #666b66; /* Green background color */
+  color: white; /* White text color */
+  border-radius: 8px; /* Rounded corners */
+  cursor: pointer;
+}
+
+/* Hover effect */
+.large-button:hover {
+  background-color: #b7bab7;
+  color: black; 
+}
+
+/* Active effect */
+.large-button:active {
+  background-color: #666b66;
+  color: black; /* Green background color */ 
 }

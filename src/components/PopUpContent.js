@@ -9,18 +9,14 @@ export const PopUpContent = () => {
   }
 
   return (
-    <div>
+    <div className="go-left">
       <Modal isOpen={isModalOpen} onClose={closeModal}>
-        <ul className="go-left">
-          <h2>Quick Affirmation</h2>
-          <li>
-           Enter data once and it appears in all the places needed (e.g. endorsement and backsheet).
-          </li>
-          <li>
-            Video tutorial:
-            [to be done]
-          </li>
-        </ul>
+        <p><strong>Quick Affirmation</strong></p>
+        <p className="">
+          {" "}
+          Enter data once and it appears in all the places needed (e.g.
+          endorsement and backsheet).
+        </p>
       </Modal>
     </div>
   )

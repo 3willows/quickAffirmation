@@ -29,7 +29,7 @@ export function Output({
         defendants={defendants}
         partyName={partyName}
       />
-      <p>
+      <p className="go-left">
         {" "}
         I, {deponentName}, of [business address] do solemnly, truthfully and sincerely
         affirm and say as follows:-
