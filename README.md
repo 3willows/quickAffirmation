@@ -1,19 +1,17 @@
 ## Why?
 
-- Certain data (e.g. deponent name & case number) are repeated 4-5 times in the header, endorsement and backsheet of an affirmation.
-- Enter the data once and the repetitions are automatically generated here.
-- Lawyers can use this to quickly create a bare bones first draft / check the repetitions before filing.
+- Quickly prototype an affirmation.
+- Save time by *not* entering deponent name and case number 4-5 times all over the place.
   
-## User story
+## How?
 
-1. Users: HK lawyers and clerks.
-2. User fills in the boxes, click the only button "Output".
-3. The heading, endorsement and the backsheet are generated.  An "Input" button  takes the user back for modifications as appropriate.
-4. One-off information (e.g. firm name; place of affirmation) are not included.
+1. Intended users: HK lawyers and clerks.
+2. Fill in the boxes, click "OUTPUT" button.
+3. The heading, endorsement and the backsheet are automatically generated.
+4. Revisions can be made by clicking the "REVISE" button.
 
 ## TO-DO
 
-- [ ] Style with better CSS: including moving the Plaintiffs/Defendants to the right.
 - [ ] Add video to explain how to use.
       
 ## DONE
@@ -22,13 +20,9 @@
 - [x] Think through the treatment of uppercase characters (i.e. use toUpperCase() consistently
 - [x] Add pop-up to explain the minimalist hilosophy behind the webpage.
 - [x] After input for P/D accepted, empty the relevant text input box
+- [x] Style with CSS: including moving the Plaintiffs/Defendants to the right.
 
-## Non-features
-- Reminder about jurat rule
-- Media query and alert users that the App is not intended to be used on mobile phones
-
-## Potential future projects
-
-- App to help lawyers calculate dates in civil litigation (there are at least 3 different rules for reckoning of dates).
-
-Previous [incomplete version](https://github.com/3willows/easyAffirmation) in "vanilla" javascript.
+## Not included
+- Information that appears only once (e.g. firm name)
+- Information that needs to be fill in when affirming/filing (e.g. indpendent solicitors who affirm; filing date)
+- Reminder about jurat rule (last page of affirmation cannot just be a signature page).
