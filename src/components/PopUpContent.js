@@ -14,8 +14,7 @@ export const PopUpContent = () => {
         <p><strong>Quick Affirmation</strong></p>
         <p className="">
           {" "}
-          Enter data once and it appears in all the places needed (e.g.
-          endorsement and backsheet).
+          Enter data once and it appears everywhere needed. 
         </p>
       </Modal>
     </div>

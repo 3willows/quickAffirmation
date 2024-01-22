@@ -136,7 +136,7 @@ function ToggleButtons({ inputOpen, toggleInputOpen }) {
   return (
     <div >
       <button className="large-button" onClick={toggleInputOpen}>
-        {inputOpen ? `OUTPUT` : `INPUT`}
+        {inputOpen ? `OUTPUT` : `REVISE`}
       </button>
     </div>
   )
