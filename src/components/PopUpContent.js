@@ -15,7 +15,6 @@ export const PopUpContent = () => {
           <strong>Quick Affirmation</strong>
         </p>
         <p className=""> Enter data once and it appears everywhere needed.</p>
-
         <a
           href="https://github.com/3willows/quickAffirmation/assets/111284156/3e0880f7-c3f4-4b46-ad4a-a8f001b296fd
 "
@@ -24,7 +23,15 @@ export const PopUpContent = () => {
         >
           Video demo
         </a>
-        <p>Works best on computer (not mobile) </p>
+        <p>Works best on computer (not mobile). </p>
+        <a
+          href="https://github.com/3willows/quickAffirmation
+"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Further Info
+        </a>
       </Modal>
     </div>
   )
