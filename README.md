@@ -8,6 +8,10 @@
 
 https://github.com/3willows/quickAffirmation/assets/111284156/9965524f-8f54-4b33-a520-31fd3cfb5634
 
+## Link
+
+- [https://3willows.github.io/quickAffirmation/](https://3willows.github.io/quickAffirmation/)
+
 ## How?
 
 1. Fill in the boxes, click "OUTPUT" button.
