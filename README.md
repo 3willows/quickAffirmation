@@ -4,7 +4,7 @@
 - Save time by *not* entering deponent name and case number 4-5 times all over the place.
 - Intended users: HK lawyers and clerks.
 
-## 15 second walkthrough
+## Video walkthrough
 
 https://github.com/3willows/quickAffirmation/assets/111284156/9965524f-8f54-4b33-a520-31fd3cfb5634
 
