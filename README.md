@@ -6,7 +6,7 @@
 
 ## Video walkthrough
 
-https://github.com/3willows/quickAffirmation/assets/111284156/55d20fef-49b7-497c-bbed-becfc13d0994
+https://github.com/3willows/quickAffirmation/assets/111284156/3e0880f7-c3f4-4b46-ad4a-a8f001b296fd
 
 ## Link
 
