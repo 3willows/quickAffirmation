@@ -16,7 +16,8 @@ export const PopUpContent = () => {
         </p>
         <p className=""> Enter data once and it appears everywhere needed.</p>
         <a
-          href="https://github.com/3willows/quickAffirmation/assets/111284156/3e0880f7-c3f4-4b46-ad4a-a8f001b296fd
+          href="https://github.com/3willows/quickAffirmation/assets/111284156/e5ecf2d4-ce2e-4a02-be6e-82f6c30d6065
+
 "
           target="_blank"
           rel="noreferrer"
