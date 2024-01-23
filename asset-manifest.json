@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/quickAffirmation/static/css/main.b80ec2c3.css",
-    "main.js": "/quickAffirmation/static/js/main.090c70da.js",
+    "main.js": "/quickAffirmation/static/js/main.df488b9e.js",
     "static/js/787.08e42bb1.chunk.js": "/quickAffirmation/static/js/787.08e42bb1.chunk.js",
     "index.html": "/quickAffirmation/index.html",
     "main.b80ec2c3.css.map": "/quickAffirmation/static/css/main.b80ec2c3.css.map",
-    "main.090c70da.js.map": "/quickAffirmation/static/js/main.090c70da.js.map",
+    "main.df488b9e.js.map": "/quickAffirmation/static/js/main.df488b9e.js.map",
     "787.08e42bb1.chunk.js.map": "/quickAffirmation/static/js/787.08e42bb1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b80ec2c3.css",
-    "static/js/main.090c70da.js"
+    "static/js/main.df488b9e.js"
   ]
 }
