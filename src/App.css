@@ -118,6 +118,7 @@ option {
   position: relative;
 }
 
+ 
 .close-button {
   position: absolute;
   top: 10px;
@@ -141,6 +142,7 @@ button {
   /* Rounded corners */
   cursor: pointer;
 }
+
 
 /* Define styles for the large button */
 
