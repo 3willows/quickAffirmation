@@ -8,7 +8,7 @@
 
 ## Video demo
 
-https://github.com/3willows/quickAffirmation/assets/111284156/636ce687-03e4-4455-ba3b-cb3210b5411c
+https://github.com/3willows/quickAffirmation/assets/111284156/1dbe2678-772d-431d-ad68-d3f996e2e935
 
 ## How?
 
