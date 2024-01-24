@@ -7,8 +7,8 @@ const Modal = ({ isOpen, onClose, children }) => {
   return (
     <div className="modal-overlay">
       <div className="modal-content">
-        <span className="close-button" onClick={onClose}>
-          &times;
+        <span className="close-button" onClick={onClose} style={{color: "white"}}>
+         <strong>&times;</strong>
         </span>
         {children}
       </div>
