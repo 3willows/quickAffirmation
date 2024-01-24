@@ -39,3 +39,8 @@ https://github.com/3willows/quickAffirmation/assets/111284156/1dbe2678-772d-431d
 - [x] After input for P/D accepted, empty the relevant text input box
 - [x] Style with CSS: including moving the Plaintiffs/Defendants to the right.
 - [x] Add video to explain how to use.
+
+# Mobile demo
+
+https://github.com/3willows/quickAffirmation/assets/111284156/7bc4b41a-874c-4085-ac17-4ed437f998a5
+
