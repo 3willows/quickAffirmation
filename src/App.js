@@ -12,9 +12,9 @@ import { EndMatters } from "./components/EndMatters"
 import { TopRight } from "./components/TopRight"
 import { Output } from "./components/Output"
 import { Parties } from "./components/PartiesLogic"
-import { DisplayParties } from "./components/DisplayParties"
-import { formattedDate } from "./components/TodayDate"
-import { PopUpContent } from "./components/PopUpContent"
+import { DisplayParties } from "./components/PartiesDisplay"
+import { formattedDate } from "./components/helpers/TodayDate"
+import { PopUpContent } from "./components/popup/PopUpContent"
 
 const initialPs = []
 const initialDs = []
@@ -92,7 +92,6 @@ function App() {
               language,
             }}
           >
-            {" "}
             <DisplayParties {...{ plaintiffs, defendants, language }} />
           </Parties>
           <AffirmationTitle
@@ -105,13 +104,7 @@ function App() {
               language,
             }}
           />
-          <p className="go-left">
-            I, {deponentName}, of [address] do solemnly, truthfully and
-            sincerely affirm and say as follows:-
-          </p>
-          <p></p>
-          [Body of Affirmation]
-          <p></p>
+          <AffirmationBody {...{ deponentName, language }} />
           <EndMatters
             partyName={partyName}
             setPartyName={setPartyName}
@@ -185,6 +178,29 @@ function Language({ language, setLanguage }) {
         <option value="English">English</option>
         <option value="Chinese">中文</option>
       </select>
+    </div>
+  )
+}
+
+function AffirmationBody({ deponentName, language }) {
+  return (
+    <div>
+      <p className="go-left">
+        {language === "Chinese" ? (
+          <>
+            本人{deponentName}, of [address] do solemnly, truthfully and
+            sincerely affirm and say as follows:-
+          </>
+        ) : (
+          <>
+            I, {deponentName}, of [address] do solemnly, truthfully and
+            sincerely affirm and say as follows:-
+          </>
+        )}
+      </p>
+      <p></p>
+      [Body of Affirmation]
+      <p></p>
     </div>
   )
 }

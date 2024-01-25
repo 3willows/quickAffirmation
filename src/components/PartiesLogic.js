@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { AddParty, RemoveParty } from "./AddRemoveParty"
+import { AddParty, RemoveParty } from "./PartiesAddRemove"
 
 export function Parties({
   plaintiffs,

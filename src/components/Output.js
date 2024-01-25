@@ -1,6 +1,6 @@
 import { TopRight } from "./TopRight"
 import { CourtHeading } from "./CourtHeading"
-import { DisplayParties } from "./DisplayParties"
+import { DisplayParties } from "./PartiesDisplay"
 
 export function Output({
   caseType,

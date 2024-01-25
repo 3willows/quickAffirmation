@@ -19,6 +19,7 @@ export function AddParty({
     </div>
   )
 }
+
 export function RemoveParty({
   toRemove,
   setToRemove,

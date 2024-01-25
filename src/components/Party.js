@@ -1,4 +1,4 @@
-import { convertToChinese, getOrdinal } from "./OrdinalChineseFormat"
+import { convertToChinese, getOrdinal } from "./helpers/OrdinalChineseFormat"
 
 export function Party({ partyName, i, side, array, language }) {
   return (
