@@ -1,6 +1,14 @@
 import "./App.css"
 import React, { useState } from "react"
-import { Heading, AffirmationTitle, EndMatters } from "./components/Input"
+import { CourtHeading } from "./components/CourtHeading"
+import {
+  Heading,
+  CaseType,
+  CaseDigit,
+  CaseYear,
+  AffirmationTitle,
+  EndMatters,
+} from "./components/Input"
 import { TopRight } from "./components/TopRight"
 import { Output } from "./components/Output"
 import { Parties } from "./components/Parties"
@@ -39,12 +47,9 @@ function App() {
       parties.filter((party) => party.name !== toRemove)
     )
   }
+
   // End matters
   const [partyName, setPartyName] = useState("Plaintiff")
-  const [affirmAddress, setAffirmAddress] = useState("place of affirmation")
-  const [independentSolicitor, setIndependentSolicitor] = useState(
-    "Independent Solicitors"
-  )
   const [date, setDate] = useState(formattedDate)
 
   // choose to show or hide 1 of 2 pages
@@ -93,15 +98,14 @@ function App() {
             date={date}
             partyName={partyName}
           />
-          <Heading
-            caseType={caseType}
-            caseDigit={caseDigit}
-            caseYear={caseYear}
-            setCaseType={setCaseType}
-            setCaseDigit={setCaseDigit}
-            setCaseYear={setCaseYear}
-            handleFocus={handleFocus}
-          />
+          <Heading>
+            <CourtHeading />
+            <CaseType caseType={caseType} setCaseType={setCaseType} />
+            NO.
+            <CaseDigit {...{ caseDigit, setCaseDigit, handleFocus }} />
+            OF
+            <CaseYear {...{ caseYear, setCaseYear, handleFocus }} />
+          </Heading>
           <Parties
             plaintiffs={plaintiffs}
             defendants={defendants}
@@ -128,11 +132,7 @@ function App() {
             partyName={partyName}
             setPartyName={setPartyName}
             date={date}
-            affirmAddress={affirmAddress}
-            independentSolicitor={independentSolicitor}
             setDate={setDate}
-            setAffirmAddress={setAffirmAddress}
-            setIndependentSolicitor={setIndependentSolicitor}
             handleFocus={handleFocus}
           />
         </div>
@@ -145,8 +145,6 @@ function App() {
           affirmNumber={affirmNumber}
           deponentName={deponentName}
           date={date}
-          affirmAddress={affirmAddress}
-          independentSolicitor={independentSolicitor}
           partyName={partyName}
           plaintiffs={plaintiffs}
           defendants={defendants}

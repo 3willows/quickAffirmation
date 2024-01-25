@@ -1,4 +1,4 @@
-import { useState, useRef } from "react"
+import { useState } from "react"
 import { DisplayParties } from "./Party&DisplayParties"
 
 export function Parties({
@@ -7,7 +7,6 @@ export function Parties({
   addPlaintiffs,
   addDefendants,
   removeParty,
-  handleFocus
 }) {
   const [newParty, setNewParty] = useState({ name: "" })
   const [side, setSide] = useState("P")

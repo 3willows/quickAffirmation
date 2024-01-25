@@ -1,4 +1,4 @@
-export function FullHeading() {
+export function CourtHeading() {
   return (
     <div>
       <p>IN THE HIGH COURT OF THE</p>

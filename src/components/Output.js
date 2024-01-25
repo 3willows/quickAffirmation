@@ -1,5 +1,5 @@
 import { TopRight } from "./TopRight"
-import { FullHeading } from "./FullHeading"
+import { CourtHeading } from "./CourtHeading"
 import { DisplayParties } from "./Party&DisplayParties"
 
 export function Output({
@@ -31,21 +31,17 @@ export function Output({
       />
       <p className="go-left">
         {" "}
-        I, {deponentName}, of [business address] do solemnly, truthfully and sincerely
-        affirm and say as follows:-
+        I, {deponentName}, of [business address] do solemnly, truthfully and
+        sincerely affirm and say as follows:-
       </p>
       <p> [BODY OF THE AFFIRMATION ] </p>
       <div className="go-left">
-        <p>
-         Signature of {deponentName} 
-        </p>
-        <p>
-         Dated this {date} 
-        </p>
+        <p>Signature of {deponentName}</p>
+        <p>Dated this {date}</p>
         <p>
           Affirmed at [independent solicitors' office] of [address] on {date}.
         </p>
-        <p> This affirmation is filed on behalf of the {" "}{partyName}.</p>
+        <p> This affirmation is filed on behalf of the {partyName}.</p>
       </div>
       ***** BACKSHEET ******
       <CommonHeading
@@ -64,7 +60,7 @@ export function Output({
         <div className="backsheet-box">
           <p>Affirmed on {date}</p>
           <p>Filed on </p>
-          <p> This affirmation is filed on behalf of the {" "}{partyName}.</p>
+          <p> This affirmation is filed on behalf of the {partyName}.</p>
         </div>
         <div className="backsheet-box"></div>
       </div>
@@ -101,7 +97,7 @@ function CommonHeading({
         className="top-right"
       />
       <div>
-        <FullHeading />
+        <CourtHeading/>
         {caseType} NO. {caseDigit} OF {caseYear}
       </div>
       <DisplayParties plaintiffs={plaintiffs} defendants={defendants} />
