@@ -15,8 +15,7 @@ export function Party({ partyName, i, side, array, language }) {
             ) : (
               <span>{`第${convertToChinese(i + 1)}${
                 side === "P" ? `原告人` : ""
-              }
-              ${side === "D" ? `被告人` : ""}
+              }${side === "D" ? `被告人` : ""}
               `}</span>
             )}
           </span>
@@ -24,7 +23,7 @@ export function Party({ partyName, i, side, array, language }) {
         </div>
       ) : (
         <div>
-          &ensp; {partyName}
+          &ensp; {partyName.toUpperCase()}
           {array.length === 1 ? (
             <span className="go-right">{`${
               side === "P" ? "PLAINTIFF" : "DEFENDANT"

@@ -24,6 +24,7 @@ export function RemoveParty({
   setToRemove,
   parties,
   handleRemoveParty,
+  language,
 }) {
   return (
     <div className="flex-box">
@@ -31,7 +32,9 @@ export function RemoveParty({
         <button type="submit">Delete</button>
         <select
           value={toRemove}
-          onChange={(e) => setToRemove(e.target.value.toUpperCase())}
+          onChange={(e) => {
+            setToRemove(e.target.value)
+          }}
         >
           {parties.map((party) => (
             <option value={party.name}>{party.name}</option>

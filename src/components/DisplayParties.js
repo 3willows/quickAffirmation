@@ -10,7 +10,13 @@ export function DisplayParties({ plaintiffs, defendants, language }) {
         side="P"
         {...{ language }}
       />
-      <p>AND</p>
+      <p>
+        {language === "Chinese" ? (
+          <p style={{ textAlign: "center" }}>與</p>
+        ) : (
+          `AND`
+        )}
+      </p>
       <p></p>{" "}
       <div>
         <DisplayOneSideParties
