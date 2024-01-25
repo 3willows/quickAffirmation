@@ -2,7 +2,7 @@
 
 - Quickly prototype an affirmation.
 - Save time by *not* entering deponent name and case number 4-5 times all over the place.
-- Intended users: HK lawyers and clerks.
+- Intended users: HK lawyers/clerks/law students.
 
 ## Try it [here](https://3willows.github.io/quickAffirmation/)
 
