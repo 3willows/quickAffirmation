@@ -2,21 +2,34 @@ export function Heading({ children }) {
   return <div>{children}</div>
 }
 
-export function CaseType({ caseType, setCaseType }) {
+export function CaseType({ caseType, setCaseType, language }) {
   return (
     <>
       <select value={caseType} onChange={(e) => setCaseType(e.target.value)}>
-        <option value="ACTION">ACTION</option>
-        <option value="BANKRUPTCY">BANKRUPTCY</option>
+        <option value="ACTION">{
+          language === "Chinese" ? `高院民事訴訟案件` : `ACTION`
+        }</option>
+        <option value="BANKRUPTCY">{
+          language === "Chinese" ? `高院破產案件` : `BANKRUPTCY`
+        }</option>
         <option value="COMPANIES (WINDING-UP) PROCEEDINGS">
-          COMPANIES (WINDING-UP) PROCEEDINGS
+        {
+          language === "Chinese" ? `高院公司清盤案件` : ` COMPANIES (WINDING-UP) PROCEEDINGS`
+        }
         </option>
-        <option value="INTENDED ACTION">INTENDED ACTION</option>
-        <option value="MENTAL HEALTH CASE">MENTAL HEALTH CASE</option>
+        <option value="INTENDED ACTION">{
+          language === "Chinese" ? `擬進行的訴訟` : `INTENDED ACTION`
+        }</option>
         <option value="MISCELLANEOUS PROCEEDINGS">
-          MISCELLANEOUS PROCEEDINGS
+        {
+          language === "Chinese" ? `高院雜項案件` : `     MISCELLANEOUS PROCEEDINGS`
+        }
         </option>
-        <option value="PROBATE ACTION">PROBATE ACTION </option>
+        <option value="PERSONAL INJURIES ACTION">
+        {
+          language === "Chinese" ? `高等法院傷亡訴訟` : `     PERSONAL INJURIES ACTION`
+        }
+        </option>
       </select>
     </>
   )

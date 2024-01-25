@@ -11,7 +11,8 @@ import {
 } from "./components/CaseNumberHeading"
 import { TopRight } from "./components/TopRight"
 import { Output } from "./components/Output"
-import { Parties } from "./components/Parties"
+import { Parties } from "./components/PartiesLogic"
+import { DisplayParties } from "./components/DisplayParties"
 import { formattedDate } from "./components/TodayDate"
 import { PopUpContent } from "./components/PopUpContent"
 
@@ -19,6 +20,9 @@ const initialPs = []
 const initialDs = []
 
 function App() {
+  // Language
+  const [language, setLanguage] = useState("English")
+
   //  HCA 123/2024
   const [caseType, setCaseType] = useState("ACTION")
   const [caseDigit, setCaseDigit] = useState("#")
@@ -56,19 +60,35 @@ function App() {
               deponentName,
               date,
               partyName,
+              language,
             }}
           />
+          <Language {...{ language, setLanguage }} />
           <Heading>
-            <CourtHeading />
-            <CaseType caseType={caseType} setCaseType={setCaseType} />
-            NO.
-            <CaseDigit {...{ caseDigit, setCaseDigit, handleFocus }} />
-            OF
-            <CaseYear {...{ caseYear, setCaseYear, handleFocus }} />
+            <CourtHeading {...{ language }} />
+            {language === "Chinese" ? (
+              <>
+                <CaseType {...{ caseType, setCaseType, language }} />
+                編號
+                <CaseYear {...{ caseYear, setCaseYear, handleFocus }} />
+                <CaseDigit {...{ caseDigit, setCaseDigit, handleFocus }} />號
+              </>
+            ) : (
+              <>
+                <CaseType {...{ caseType, setCaseType, language }} />
+                NO.
+                <CaseDigit {...{ caseDigit, setCaseDigit, handleFocus }} />
+                OF
+                <CaseYear {...{ caseYear, setCaseYear, handleFocus }} />
+              </>
+            )}
           </Heading>
           <Parties
-            {...{ plaintiffs, defendants, setPlaintiffs, setDefendants }}
-          />
+            {...{ plaintiffs, defendants, setPlaintiffs, setDefendants, language }}
+          >
+            {" "}
+            <DisplayParties {...{ plaintiffs, defendants, language }} />
+          </Parties>
           <AffirmationTitle
             affirmNumber={affirmNumber}
             deponentName={deponentName}
@@ -144,6 +164,18 @@ function ToggleButtons({ inputOpen, setInputOpen }) {
       <button className="large-button" onClick={toggleInputOpen}>
         {inputOpen ? `OUTPUT` : `REVISE`}
       </button>
+    </div>
+  )
+}
+
+function Language({ language, setLanguage }) {
+  return (
+    <div className="go-right">
+      <select value={language} onChange={(e) => setLanguage(e.target.value)}>
+        <option value="English">語言</option>
+        <option value="English">English</option>
+        <option value="Chinese">中文</option>
+      </select>
     </div>
   )
 }

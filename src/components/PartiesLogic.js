@@ -1,5 +1,4 @@
 import { useState } from "react"
-import { DisplayParties } from "./DisplayParties"
 import { AddParty, RemoveParty } from "./AddRemoveParty"
 
 export function Parties({
@@ -7,6 +6,8 @@ export function Parties({
   defendants,
   setPlaintiffs,
   setDefendants,
+  children,
+  language,
 }) {
   const parties = [{ name: "SELECT PARTY" }, ...plaintiffs, ...defendants]
   const [side, setSide] = useState("P")
@@ -14,7 +15,9 @@ export function Parties({
   const [toRemove, setToRemove] = useState("")
 
   const handleInputChange = (e) => {
-    setNewParty({ name: e.target.value.toUpperCase() })
+    language === "Chinese"
+      ? setNewParty({ name: e.target.value })
+      : setNewParty({ name: e.target.value.toUpperCase() })
   }
 
   const handleAddParty = (e) => {
@@ -43,8 +46,7 @@ export function Parties({
 
   return (
     <div className="go-left">
-      <DisplayParties plaintiffs={plaintiffs} defendants={defendants} />
-
+      {children}
       <div className="flex-outside">
         <AddParty
           partyType="P"

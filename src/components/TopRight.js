@@ -5,7 +5,7 @@ export function TopRight({
   affirmNumber,
   deponentName,
   partyName,
-  date,
+  date
 }) {
   return (
     <div className="top-right">
@@ -17,7 +17,8 @@ export function TopRight({
         {caseType === "APPLICATION TO SET ASIDE A STATUTORY DEMAND" && "SD"}
         {caseType === "PROBATE ACTION" && "PA"}
         {caseType === "COMPANIES (WINDING-UP) PROCEEDINGS" && "CW"}
-        {caseType === "MENTAL HEALTH CASE" && "MH"} {" "}
+        {caseType === "MENTAL HEALTH CASE" && "MH"}
+        {caseType === "PERSONAL INJURIES ACTION" && "PI"} {" "}
         {caseDigit}/{caseYear}
       </p>
       <p>
