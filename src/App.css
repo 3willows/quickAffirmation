@@ -148,7 +148,7 @@ button {
 }
 
 /* Hover effect */
-button:hover {
+button:hover{
   background-color: #b7bab7;
   color: black;
 }
