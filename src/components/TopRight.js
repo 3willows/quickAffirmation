@@ -23,7 +23,7 @@ export function TopRight({
         {caseDigit}/{caseYear}
       </p>
       <p>
-        {partyName}:{language === "Chinese"? `第${affirmNumber}份`: affirmNumber}:{deponentName}:{date}
+        {partyName}:{language === "Chinese"? `第${affirmNumber}份誓章`: affirmNumber}:{deponentName}:{date}
       </p>
     </div>
   )
