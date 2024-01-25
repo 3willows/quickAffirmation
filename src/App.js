@@ -7,7 +7,8 @@ import {
   CaseDigit,
   CaseYear,
 } from "./components/CaseNumberHeading"
-import { AffirmationTitle, EndMatters } from "./components/AffirmationTitle"
+import { AffirmationTitle } from "./components/AffirmationTitle"
+import { EndMatters } from "./components/EndMatters"
 import { TopRight } from "./components/TopRight"
 import { Output } from "./components/Output"
 import { Parties } from "./components/PartiesLogic"
@@ -101,7 +102,7 @@ function App() {
               setAffirmNumber,
               setDeponentName,
               handleFocus,
-              language
+              language,
             }}
           />
           <p className="go-left">
