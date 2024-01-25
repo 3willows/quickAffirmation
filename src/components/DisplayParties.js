@@ -2,11 +2,20 @@ export function DisplayParties({ plaintiffs, defendants }) {
   return (
     <div className="go-left">
       BETWEEN
-      <p></p>
-      <DisplayOneSideParties OneSideParties={plaintiffs} name="Plaintiff" side="P" />
+      <p></p>{" "}
+      <DisplayOneSideParties
+        OneSideParties={plaintiffs}
+        name="Plaintiff"
+        side="P"
+      />
       <p>AND</p>
+      <p></p>{" "}
       <div>
-      <DisplayOneSideParties OneSideParties={defendants} name="Defendant" side="D"/>
+        <DisplayOneSideParties
+          OneSideParties={defendants}
+          name="Defendant"
+          side="D"
+        />
       </div>
     </div>
   )

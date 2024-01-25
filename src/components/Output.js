@@ -87,8 +87,10 @@ function CommonHeading({
         {caseType} NO. {caseDigit} OF {caseYear}
       </div>
       <DisplayParties plaintiffs={plaintiffs} defendants={defendants} />
+      <p></p>{" "}
       <div className="affirm-box">
         {affirmNumber} AFFIRMATION OF {deponentName.toUpperCase()}
+        <p></p>{" "}
       </div>
     </div>
   )
@@ -103,7 +105,8 @@ function AffirmationBody({ deponentName, date, partyName, children }) {
         I, {deponentName}, of [business address] do solemnly, truthfully and
         sincerely affirm and say as follows:-
       </p>
-      <p> [BODY OF THE AFFIRMATION ] </p>
+      <p></p> <p> [BODY OF THE AFFIRMATION ] </p>
+      <p></p>{" "}
       <div className="go-left">
         <p>Signature of {deponentName}</p>
         <p>Dated this {date}</p>
@@ -129,7 +132,7 @@ function Backsheet({ date, partyName, children }) {
         </div>
         <div className="backsheet-box"></div>
       </div>
-      <p>[Firm name]</p>
+      <p></p> <p></p> <p></p> <p>[Firm name]</p>
       <p>Solicitors for {partyName}</p>
       <p>[Firm address]</p>
       <p>[Firm Phone & Fax No]</p>
@@ -137,4 +140,3 @@ function Backsheet({ date, partyName, children }) {
     </>
   )
 }
-
