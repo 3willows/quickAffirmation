@@ -10,7 +10,6 @@ export const PopUpContent = () => {
 
   const isMobile = window.innerWidth <= 700;
 
-
   return (
     <div className="go-left">
       <Modal isOpen={isModalOpen} onClose={closeModal}>

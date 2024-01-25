@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { DisplayParties } from "./Party&DisplayParties"
+import { DisplayParties } from "./DisplayParties"
 
 export function Parties({
   plaintiffs,

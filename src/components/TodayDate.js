@@ -1,3 +1,5 @@
+// Default date of affirmation
+
 function formatDate(date) {
   const months = [
     "January",

@@ -40,7 +40,6 @@ export function Party({ name, i, side, array }) {
     let v = n % 100
     return n + (suffix[(v - 20) % 10] || suffix[v] || suffix[0])
   }
-
   return (
     <div>
       &ensp; {name}

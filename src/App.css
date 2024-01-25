@@ -14,10 +14,6 @@ body {
 
 }
 
-.digital {
-  width: 60px;
-}
-
 @media only screen and (max-width: 300px) {
 
   /* Font size for screens smaller than 768px (e.g., mobile screens) */
@@ -48,6 +44,11 @@ option {
   text-align: center;
 }
 
+/* make all input boxes for digits shorter */
+.digital {
+  width: 60px;
+}
+
 .top-right {
   text-align: right;
 }
@@ -62,6 +63,7 @@ option {
   right: 5%;
 }
 
+/* used only for the 3 buttons/input boxes for adding/removing parties */
 .flex-outside {
   display: flex;
   justify-content: space-between;
@@ -75,6 +77,16 @@ option {
   margin: 2%;
 }
 
+/* styling for the affirmation title (i.e. 1st Affirmation of Ming */
+.affirm-box {
+  display: inline-block;
+  border-top: 2px solid white;
+  /* Adjust border color to match text color */
+  border-bottom: 2px solid white;
+  /* Adjust border color to match text color */
+}
+
+/* used only for the affirmed on and filed on parts in the backsheet*/
 .backsheet-outside {
   display: flex;
   justify-content: center;
@@ -88,13 +100,6 @@ option {
   /* Full width on small screens */
 }
 
-.affirm-box {
-  display: inline-block;
-  border-top: 2px solid white;
-  /* Adjust border color to match text color */
-  border-bottom: 2px solid white;
-  /* Adjust border color to match text color */
-}
 
 /* Add modal styles to your CSS */
 .modal-overlay {
@@ -141,9 +146,6 @@ button {
   /* Rounded corners */
   cursor: pointer;
 }
-
-
-/* Define styles for the large button */
 
 /* Hover effect */
 button:hover {
