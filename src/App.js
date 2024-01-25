@@ -8,7 +8,7 @@ import {
   CaseYear,
   AffirmationTitle,
   EndMatters,
-} from "./components/Input"
+} from "./components/InputHeading"
 import { TopRight } from "./components/TopRight"
 import { Output } from "./components/Output"
 import { Parties } from "./components/Parties"
@@ -32,71 +32,31 @@ function App() {
   const [plaintiffs, setPlaintiffs] = useState(initialPs)
   const [defendants, setDefendants] = useState(initialDs)
 
-  function addPlaintiffs(newP) {
-    setPlaintiffs((plaintiffs) => [...plaintiffs, newP])
-  }
-  function addDefendants(newP) {
-    setDefendants((defendants) => [...defendants, newP])
-  }
-  function removeParty(toRemove) {
-    setPlaintiffs((parties) =>
-      parties.filter((party) => party.name !== toRemove)
-    )
-
-    setDefendants((parties) =>
-      parties.filter((party) => party.name !== toRemove)
-    )
-  }
-
   // End matters
   const [partyName, setPartyName] = useState("Plaintiff")
   const [date, setDate] = useState(formattedDate)
 
   // choose to show or hide 1 of 2 pages
   const [inputOpen, setInputOpen] = useState(true)
-  function toggleInputOpen(inputOpen) {
-    setInputOpen((inputOpen) => !inputOpen)
-    scrollToTop()
-  }
+
+  // handle focus i.e. select all text in box
   const handleFocus = (event) => event.target.select()
-
-  // scroll to top
-  const [visible, setVisible] = useState(false)
-
-  const toggleVisible = () => {
-    const scrolled = document.documentElement.scrollTop
-    if (scrolled > 300) {
-      setVisible(true)
-    } else if (scrolled <= 300) {
-      setVisible(false)
-    }
-  }
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "auto",
-      /* you can also use 'auto' behaviour 
-       in place of 'smooth' */
-    })
-  }
-
-  window.addEventListener("scroll", toggleVisible)
 
   return (
     <div className="App">
       <PopUpContent />
-
       {inputOpen && (
         <div className="inputComponents">
           <TopRight
-            caseType={caseType}
-            caseDigit={caseDigit}
-            caseYear={caseYear}
-            affirmNumber={affirmNumber}
-            deponentName={deponentName}
-            date={date}
-            partyName={partyName}
+            {...{
+              caseType,
+              caseDigit,
+              caseYear,
+              affirmNumber,
+              deponentName,
+              date,
+              partyName,
+            }}
           />
           <Heading>
             <CourtHeading />
@@ -107,12 +67,7 @@ function App() {
             <CaseYear {...{ caseYear, setCaseYear, handleFocus }} />
           </Heading>
           <Parties
-            plaintiffs={plaintiffs}
-            defendants={defendants}
-            addPlaintiffs={addPlaintiffs}
-            addDefendants={addDefendants}
-            removeParty={removeParty}
-            handleFocus={handleFocus}
+            {...{ plaintiffs, defendants, setPlaintiffs, setDefendants }}
           />
           <AffirmationTitle
             affirmNumber={affirmNumber}
@@ -150,14 +105,40 @@ function App() {
           defendants={defendants}
         />
       )}
-      <ToggleButtons inputOpen={inputOpen} toggleInputOpen={toggleInputOpen} />
+      <ToggleButtons inputOpen={inputOpen} setInputOpen={setInputOpen} />
     </div>
   )
 }
 
 export default App
 
-function ToggleButtons({ inputOpen, toggleInputOpen }) {
+function ToggleButtons({ inputOpen, setInputOpen }) {
+  function toggleInputOpen(inputOpen) {
+    setInputOpen((inputOpen) => !inputOpen)
+    scrollToTop()
+  }
+
+  const [visible, setVisible] = useState(false)
+
+  const toggleVisible = () => {
+    const scrolled = document.documentElement.scrollTop
+    if (scrolled > 300) {
+      setVisible(true)
+    } else if (scrolled <= 300) {
+      setVisible(false)
+    }
+  }
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "auto",
+      /* you can also use 'auto' behaviour 
+       in place of 'smooth' */
+    })
+  }
+
+  window.addEventListener("scroll", toggleVisible)
   return (
     <div>
       <button className="large-button" onClick={toggleInputOpen}>

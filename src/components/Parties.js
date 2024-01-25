@@ -4,10 +4,25 @@ import { DisplayParties } from "./Party&DisplayParties"
 export function Parties({
   plaintiffs,
   defendants,
-  addPlaintiffs,
-  addDefendants,
-  removeParty,
+  setPlaintiffs,
+  setDefendants
 }) {
+  function addPlaintiffs(newP) {
+    setPlaintiffs((plaintiffs) => [...plaintiffs, newP])
+  }
+  function addDefendants(newP) {
+    setDefendants((defendants) => [...defendants, newP])
+  }
+  function removeParty(toRemove) {
+    setPlaintiffs((parties) =>
+      parties.filter((party) => party.name !== toRemove)
+    )
+
+    setDefendants((parties) =>
+      parties.filter((party) => party.name !== toRemove)
+    )
+  }
+  
   const [newParty, setNewParty] = useState({ name: "" })
   const [side, setSide] = useState("P")
   const [toRemove, setToRemove] = useState("")
