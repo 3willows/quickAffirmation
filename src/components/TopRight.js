@@ -5,7 +5,8 @@ export function TopRight({
   affirmNumber,
   deponentName,
   partyName,
-  date
+  date,
+  language
 }) {
   return (
     <div className="top-right">
@@ -22,7 +23,7 @@ export function TopRight({
         {caseDigit}/{caseYear}
       </p>
       <p>
-        {partyName}:{affirmNumber}:{deponentName}:{date}
+        {partyName}:{language === "Chinese"? `第${affirmNumber}份`: affirmNumber}:{deponentName}:{date}
       </p>
     </div>
   )

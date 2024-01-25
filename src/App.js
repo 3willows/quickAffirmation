@@ -6,9 +6,8 @@ import {
   CaseType,
   CaseDigit,
   CaseYear,
-  AffirmationTitle,
-  EndMatters,
 } from "./components/CaseNumberHeading"
+import { AffirmationTitle, EndMatters } from "./components/AffirmationTitle"
 import { TopRight } from "./components/TopRight"
 import { Output } from "./components/Output"
 import { Parties } from "./components/PartiesLogic"
@@ -84,17 +83,26 @@ function App() {
             )}
           </Heading>
           <Parties
-            {...{ plaintiffs, defendants, setPlaintiffs, setDefendants, language }}
+            {...{
+              plaintiffs,
+              defendants,
+              setPlaintiffs,
+              setDefendants,
+              language,
+            }}
           >
             {" "}
             <DisplayParties {...{ plaintiffs, defendants, language }} />
           </Parties>
           <AffirmationTitle
-            affirmNumber={affirmNumber}
-            deponentName={deponentName}
-            setAffirmNumber={setAffirmNumber}
-            setDeponentName={setDeponentName}
-            handleFocus={handleFocus}
+            {...{
+              affirmNumber,
+              deponentName,
+              setAffirmNumber,
+              setDeponentName,
+              handleFocus,
+              language
+            }}
           />
           <p className="go-left">
             I, {deponentName}, of [address] do solemnly, truthfully and
