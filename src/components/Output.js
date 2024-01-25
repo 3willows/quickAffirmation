@@ -14,7 +14,7 @@ export function Output({
   defendants,
 }) {
   return (
-    <div>
+    <div className="output">
       ***** BODY ******
       <AffirmationBody
         {...{

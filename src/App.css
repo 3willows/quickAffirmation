@@ -14,6 +14,11 @@ body {
 
 }
 
+.output{
+  background-color: white;
+  color: black;
+}
+
 @media only screen and (max-width: 300px) {
 
   /* Font size for screens smaller than 768px (e.g., mobile screens) */
@@ -42,6 +47,7 @@ button,
 option {
   font-size: 22px;
   text-align: center;
+  border-radius: 8px; /* Add the same border-radius property as buttons */
 }
 
 /* make all input boxes for digits shorter */
