@@ -21,14 +21,10 @@ https://github.com/3willows/quickAffirmation/assets/111284156/1dbe2678-772d-431d
 3. Revisions can be made by clicking the "REVISE" button.
 
 
-## History
+## Planned future features
 
-- [x] Deploy react version
-- [x] Think through the treatment of uppercase characters (i.e. use toUpperCase() consistently)
-- [x] Add pop-up.
-- [x] After input for P/D accepted, empty the relevant text input box
-- [x] Style with CSS: including moving the Plaintiffs/Defendants to the right.
-- [x] Add video to explain how to use.
+- [ ] Chinese input + output
+- [ ] District Court heading
 
 ## Not included
 - Information that appears only once (e.g. firm name)
