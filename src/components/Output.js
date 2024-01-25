@@ -9,25 +9,25 @@ export function Output({
   affirmNumber,
   deponentName,
   date,
-  affirmAddress,
-  independentSolicitor,
   partyName,
   plaintiffs,
   defendants,
 }) {
   return (
-    <div className="backsheet">
+    <div>
       ***** BODY ******
       <CommonHeading
-        caseType={caseType}
-        caseDigit={caseDigit}
-        caseYear={caseYear}
-        affirmNumber={affirmNumber}
-        deponentName={deponentName}
-        date={date}
-        plaintiffs={plaintiffs}
-        defendants={defendants}
-        partyName={partyName}
+        {...{
+          caseType,
+          caseDigit,
+          caseYear,
+          affirmNumber,
+          deponentName,
+          date,
+          plaintiffs,
+          defendants,
+          partyName,
+        }}
       />
       <p className="go-left">
         {" "}
@@ -45,15 +45,17 @@ export function Output({
       </div>
       ***** BACKSHEET ******
       <CommonHeading
-        caseType={caseType}
-        caseDigit={caseDigit}
-        caseYear={caseYear}
-        affirmNumber={affirmNumber}
-        deponentName={deponentName}
-        date={date}
-        plaintiffs={plaintiffs}
-        defendants={defendants}
-        partyName={partyName}
+        {...{
+          caseType,
+          caseDigit,
+          caseYear,
+          affirmNumber,
+          deponentName,
+          date,
+          plaintiffs,
+          defendants,
+          partyName,
+        }}
       />
       <div className="backsheet-outside">
         <div className="backsheet-box"></div>
@@ -87,17 +89,20 @@ function CommonHeading({
   return (
     <div>
       <TopRight
-        caseType={caseType}
-        caseDigit={caseDigit}
-        caseYear={caseYear}
-        affirmNumber={affirmNumber}
-        deponentName={deponentName}
-        date={date}
-        partyName={partyName}
+        {...{
+          caseType,
+          caseDigit,
+          caseYear,
+          affirmNumber,
+          deponentName,
+          date,
+          partyName,
+        }}
         className="top-right"
       />
+
       <div>
-        <CourtHeading/>
+        <CourtHeading />
         {caseType} NO. {caseDigit} OF {caseYear}
       </div>
       <DisplayParties plaintiffs={plaintiffs} defendants={defendants} />

@@ -8,7 +8,7 @@ import {
   CaseYear,
   AffirmationTitle,
   EndMatters,
-} from "./components/InputHeading"
+} from "./components/CaseNumberHeading"
 import { TopRight } from "./components/TopRight"
 import { Output } from "./components/Output"
 import { Parties } from "./components/Parties"

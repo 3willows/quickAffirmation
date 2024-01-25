@@ -5,28 +5,12 @@ export function Parties({
   plaintiffs,
   defendants,
   setPlaintiffs,
-  setDefendants
+  setDefendants,
 }) {
-  function addPlaintiffs(newP) {
-    setPlaintiffs((plaintiffs) => [...plaintiffs, newP])
-  }
-  function addDefendants(newP) {
-    setDefendants((defendants) => [...defendants, newP])
-  }
-  function removeParty(toRemove) {
-    setPlaintiffs((parties) =>
-      parties.filter((party) => party.name !== toRemove)
-    )
-
-    setDefendants((parties) =>
-      parties.filter((party) => party.name !== toRemove)
-    )
-  }
-  
-  const [newParty, setNewParty] = useState({ name: "" })
-  const [side, setSide] = useState("P")
-  const [toRemove, setToRemove] = useState("")
   const parties = [{ name: "SELECT PARTY" }, ...plaintiffs, ...defendants]
+  const [side, setSide] = useState("P")
+  const [newParty, setNewParty] = useState({ name: "" })
+  const [toRemove, setToRemove] = useState("")
 
   const handleInputChange = (e) => {
     setNewParty({ name: e.target.value.toUpperCase() })
@@ -34,17 +18,23 @@ export function Parties({
 
   const handleAddParty = (e) => {
     e.preventDefault()
-
     if (!newParty || !newParty.name) {
       return
     }
     if (parties.some((obj) => obj.name === newParty.name)) return
-
-    side === "P" && addPlaintiffs(newParty)
-    side === "D" && addDefendants(newParty)
+    side === "P" && setPlaintiffs((plaintiffs) => [...plaintiffs, newParty])
+    side === "D" && setDefendants((defendants) => [...defendants, newParty])
     setNewParty({ name: "" })
   }
 
+  function removeParty(toRemove) {
+    setPlaintiffs((parties) =>
+      parties.filter((party) => party.name !== toRemove)
+    )
+    setDefendants((parties) =>
+      parties.filter((party) => party.name !== toRemove)
+    )
+  }
   const handleRemoveParty = (e) => {
     e.preventDefault()
     removeParty(toRemove.toUpperCase())
@@ -55,46 +45,60 @@ export function Parties({
       <DisplayParties plaintiffs={plaintiffs} defendants={defendants} />
 
       <div className="flex-outside">
-        <div className="flex-box ">
-          <form onSubmit={handleAddParty} onChange={() => setSide("P")}>
-            <button> Add P </button>
-            <input
-              type="text"
-              value={side === "P" ? newParty.name : ""}
-              onChange={handleInputChange}
-            ></input>
-          </form>
-        </div>
+        <AddParty
+          partyType="P"
+          {...{ handleAddParty, side, setSide, handleInputChange, newParty }}
+        />
 
-        <div className="flex-box">
-          <form onSubmit={handleRemoveParty}>
-            <button type="submit">Delete</button>
-            <select
-              value={toRemove}
-              onChange={(e) => setToRemove(e.target.value.toUpperCase())}
-            >
-              {parties.map((party) => (
-                <PartyName name={party.name} key={party.name} />
-              ))}
-            </select>
-          </form>
-        </div>
+        <RemoveParty
+          {...{ toRemove, setToRemove, parties, handleRemoveParty }}
+        />
 
-        <div className="flex-box ">
-          <form onSubmit={handleAddParty} onChange={() => setSide("D")}>
-            <button> Add D </button>
-            <input
-              type="text"
-              value={side === "D" ? newParty.name : ""}
-              onChange={handleInputChange}
-            ></input>
-          </form>{" "}
-        </div>
+        <AddParty
+          partyType="D"
+          {...{ handleAddParty, side, setSide, handleInputChange, newParty }}
+        />
       </div>
     </div>
   )
 }
 
-function PartyName({ name }) {
-  return <option value={name}>{name}</option>
+function AddParty({
+  partyType,
+  handleAddParty,
+  side,
+  setSide,
+  handleInputChange,
+  newParty,
+}) {
+  return (
+    <div className="flex-box ">
+      <form onSubmit={handleAddParty} onChange={() => setSide(partyType)}>
+        <button> Add {partyType} </button>
+        <input
+          type="text"
+          value={side === partyType ? newParty.name : ""}
+          onChange={handleInputChange}
+        ></input>
+      </form>
+    </div>
+  )
+}
+
+function RemoveParty({ toRemove, setToRemove, parties, handleRemoveParty }) {
+  return (
+    <div className="flex-box">
+      <form onSubmit={handleRemoveParty}>
+        <button type="submit">Delete</button>
+        <select
+          value={toRemove}
+          onChange={(e) => setToRemove(e.target.value.toUpperCase())}
+        >
+          {parties.map((party) => (
+            <option value={party.name}>{party.name}</option>
+          ))}
+        </select>
+      </form>
+    </div>
+  )
 }
