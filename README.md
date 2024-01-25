@@ -24,7 +24,9 @@ https://github.com/3willows/quickAffirmation/assets/111284156/1dbe2678-772d-431d
 ## Planned future features
 
 - [ ] Chinese input + output
+- [ ] More case types (e.g. PI / EC)
 - [ ] District Court heading
+- [ ] More party names (e.g. Applicant/Respondent etc)
 
 ## Not included
 - Information that appears only once (e.g. firm name)
