@@ -1,8 +1,8 @@
 const highCourtcaseTypes = [
-  { Chinese: "高院民事訴訟案件", English: "ACTION" },
-  { Chinese: "高院破產案件", English: "BANKRUPTCY" },
+  { Chinese: "民事訴訟案件", English: "ACTION" },
+  { Chinese: "破產案件", English: "BANKRUPTCY" },
   {
-    Chinese: "高院公司清盤案件",
+    Chinese: "公司清盤案件",
     English: "COMPANIES (WINDING-UP) PROCEEDINGS",
   },
   {
@@ -14,7 +14,7 @@ const highCourtcaseTypes = [
     English: "MISCELLANEOUS PROCEEDINGS",
   },
   {
-    Chinese: "高等法院傷亡訴訟",
+    Chinese: "傷亡訴訟",
     English: "PERSONAL INJURIES ACTION",
   },
 ]

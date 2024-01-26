@@ -3,6 +3,7 @@ export function CourtHeadingInput({ court, setCourt, language }) {
     <div>
       <p>香港特別行政區</p>
       <p>高等法院原訟法庭</p>
+      <p>民事司法管轄權</p>
     </div>
   ) : (
     <div>
@@ -17,6 +18,7 @@ export function CourtHeadingOuput({ language }) {
     <div>
       <p>香港特別行政區</p>
       <p>高等法院原訟法庭</p>
+      <p>民事司法管轄權</p>
     </div>
   ) : (
     <div>
