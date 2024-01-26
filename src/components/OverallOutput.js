@@ -13,6 +13,7 @@ export function Output({
   plaintiffs,
   defendants,
   language,
+  setLanguage,
 }) {
   return (
     <div className="output">
@@ -37,6 +38,7 @@ export function Output({
             defendants,
             partyName,
             language,
+            setLanguage,
           }}
         />
       </AffirmationBody>

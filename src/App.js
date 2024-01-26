@@ -1,11 +1,7 @@
 import "./App.css"
 import React, { useState } from "react"
 import { CourtHeading } from "./components/CourtHeading"
-import {
-  CaseType,
-  CaseDigit,
-  CaseYear,
-} from "./components/CaseNumberHeading"
+import { CaseType, CaseDigit, CaseYear } from "./components/CaseNumberHeading"
 import { CommonHeadingInput } from "./components/CommonHeadingInput"
 import { AffirmationTitle } from "./components/AffirmationTitleInput"
 import { EndMatters } from "./components/OuputEndMatter"
@@ -16,6 +12,7 @@ import { DisplayParties } from "./components/PartiesDisplay"
 import { formattedDate } from "./components/helpers/TodayDate"
 import { PopUpContent } from "./components/popup/PopUpContent"
 import { AffirmationBody } from "./components/AffirmationBodyInput"
+import { Language } from "./components/Language"
 
 const initialPs = []
 const initialDs = []
@@ -131,6 +128,7 @@ function App() {
             plaintiffs,
             defendants,
             language,
+            setLanguage,
           }}
         />
       )}
@@ -162,7 +160,7 @@ function ToggleButtons({ inputOpen, setInputOpen }) {
     window.scrollTo({
       top: 0,
       behavior: "auto",
-      /* you can also use 'auto' behaviour 
+      /* you can also use 'auto' behaviour
        in place of 'smooth' */
     })
   }
@@ -173,18 +171,6 @@ function ToggleButtons({ inputOpen, setInputOpen }) {
       <button className="large-button" onClick={toggleInputOpen}>
         {inputOpen ? `OUTPUT` : `REVISE`}
       </button>
-    </div>
-  )
-}
-
-function Language({ language, setLanguage }) {
-  return (
-    <div className="go-right">
-      <select value={language} onChange={(e) => setLanguage(e.target.value)}>
-        <option value="English">語言</option>
-        <option value="English">English</option>
-        <option value="Chinese">中文</option>
-      </select>
     </div>
   )
 }

@@ -3,6 +3,7 @@ import { CourtHeading } from "./CourtHeading"
 import { DisplayParties } from "./PartiesDisplay"
 import { AffirmationTitleOutput } from "./AffirmationTitleOutput"
 import { CaseHeadingOutput } from "./CaseNumberHeading"
+import { Language } from "./Language"
 
 export function CommonHeading({
   caseType,
@@ -15,6 +16,7 @@ export function CommonHeading({
   defendants,
   partyName,
   language,
+  setLanguage
 }) {
   return (
     <div>
@@ -31,6 +33,7 @@ export function CommonHeading({
         }}
         className="top-right"
       />
+      <Language {...{ language, setLanguage }} />
       <div>
         <CourtHeading
           {...{
@@ -42,7 +45,7 @@ export function CommonHeading({
             caseType,
             caseDigit,
             caseYear,
-            language
+            language,
           }}
         />
       </div>
