@@ -2,11 +2,11 @@ import "./App.css"
 import React, { useState } from "react"
 import { CourtHeading } from "./components/CourtHeading"
 import {
-  Heading,
   CaseType,
   CaseDigit,
   CaseYear,
 } from "./components/CaseNumberHeading"
+import { CommonHeadingInput } from "./components/CommonHeadingInput"
 import { AffirmationTitle } from "./components/AffirmationTitleInput"
 import { EndMatters } from "./components/OuputEndMatter"
 import { TopRight } from "./components/TopRight"
@@ -65,13 +65,13 @@ function App() {
             }}
           />
           <Language {...{ language, setLanguage }} />
-          <Heading>
+          <CommonHeadingInput>
             <CourtHeading {...{ language }} />
             {language === "Chinese" ? (
               <>
                 <CaseType {...{ caseType, setCaseType, language }} />
                 編號
-                <CaseYear {...{ caseYear, setCaseYear, handleFocus }} />
+                <CaseYear {...{ caseYear, setCaseYear, handleFocus }} />年
                 <CaseDigit {...{ caseDigit, setCaseDigit, handleFocus }} />號
               </>
             ) : (
@@ -83,7 +83,7 @@ function App() {
                 <CaseYear {...{ caseYear, setCaseYear, handleFocus }} />
               </>
             )}
-          </Heading>
+          </CommonHeadingInput>
           <Parties
             {...{
               plaintiffs,

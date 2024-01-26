@@ -9,13 +9,17 @@ export function Parties({
   children,
   language,
 }) {
-  const parties = [{ name: "SELECT PARTY" }, ...plaintiffs, ...defendants]
+  const parties = [
+    { name: "SELECT PARTY", key: "SELECT PARTY" },
+    ...plaintiffs,
+    ...defendants,
+  ]
   const [side, setSide] = useState("P")
   const [newParty, setNewParty] = useState({ name: "" })
   const [toRemove, setToRemove] = useState("")
 
   const handleInputChange = (e) => {
-       setNewParty({ name: e.target.value })
+    setNewParty({ name: e.target.value, key: e.target.value })
   }
 
   const handleAddParty = (e) => {
@@ -27,7 +31,7 @@ export function Parties({
     if (parties.some((obj) => obj.name.toUpperCase() === newParty.name)) return
     side === "P" && setPlaintiffs((plaintiffs) => [...plaintiffs, newParty])
     side === "D" && setDefendants((defendants) => [...defendants, newParty])
-    setNewParty({ name: "" })
+    setNewParty({ name: "", key: "" })
   }
 
   function removeParty(toRemove) {
@@ -40,7 +44,7 @@ export function Parties({
   }
   const handleRemoveParty = (e) => {
     e.preventDefault()
-     removeParty(toRemove)
+    removeParty(toRemove)
   }
 
   return (

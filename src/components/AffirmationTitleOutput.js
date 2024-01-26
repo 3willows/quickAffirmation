@@ -15,7 +15,7 @@ export function AffirmationTitleOutput({
       ) : (
         <>
           {affirmNumber}
-          AFFIRMATION OF
+          &nbsp;AFFIRMATION OF &nbsp;
           {deponentName.toUpperCase()}
         </>
       )}

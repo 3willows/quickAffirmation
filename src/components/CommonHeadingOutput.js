@@ -2,6 +2,7 @@ import { TopRight } from "./TopRight"
 import { CourtHeading } from "./CourtHeading"
 import { DisplayParties } from "./PartiesDisplay"
 import { AffirmationTitleOutput } from "./AffirmationTitleOutput"
+import { CaseHeadingOutput } from "./CaseNumberHeading"
 
 export function CommonHeading({
   caseType,
@@ -36,17 +37,25 @@ export function CommonHeading({
             language,
           }}
         />
-        {caseType} NO. {caseDigit} OF {caseYear}
+        <CaseHeadingOutput
+          {...{
+            caseType,
+            caseDigit,
+            caseYear,
+            language
+          }}
+        />
       </div>
       <DisplayParties {...{ plaintiffs, defendants, language }} />
       <p></p>{" "}
       <div className="affirm-box">
-      <AffirmationTitleOutput
+        <AffirmationTitleOutput
           {...{
             affirmNumber,
             deponentName,
             language,
-          }} />
+          }}
+        />
         <p></p>{" "}
       </div>
     </div>
