@@ -1,6 +1,6 @@
 import "./App.css"
 import React, { useState } from "react"
-import { CourtHeading } from "./components/CourtHeading"
+import { CourtHeadingInput, CourtHeadingOuput } from "./components/CourtHeading"
 import { CaseType, CaseDigit, CaseYear } from "./components/CaseNumberHeading"
 import { CommonHeadingInput } from "./components/CommonHeadingInput"
 import { AffirmationTitle } from "./components/AffirmationTitleInput"
@@ -20,6 +20,9 @@ const initialDs = []
 function App() {
   // Language
   const [language, setLanguage] = useState("English")
+
+  // Court
+  const [court, setCourt] = useState("Court of First Instance")
 
   //  HCA 123/2024
   const [caseType, setCaseType] = useState("ACTION")
@@ -63,7 +66,7 @@ function App() {
           />
           <Language {...{ language, setLanguage }} />
           <CommonHeadingInput>
-            <CourtHeading {...{ language }} />
+            <CourtHeadingInput {...{ court, setCourt, language }} />
             {language === "Chinese" ? (
               <>
                 <CaseType {...{ caseType, setCaseType, language }} />

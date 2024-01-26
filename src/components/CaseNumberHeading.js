@@ -19,6 +19,26 @@ const highCourtcaseTypes = [
   },
 ]
 
+const districtCourtCaseTypes = [
+  { Chinese: "民事訴訟案件", English: "CIVIL ACTION" },
+  {
+    Chinese: "僱員補償案件",
+    English: "EMPLOYEES’ COMPENSATION CASE",
+  },
+  {
+    Chinese: "婚姻訴訟案件",
+    English: "MATRIMONIAL CAUSES",
+  },
+  {
+    Chinese: "雜項案件",
+    English: "MISCELLANEOUS PROCEEDINGS",
+  },
+  {
+    Chinese: "傷亡訴訟",
+    English: "PERSONAL INJURIES ACTION",
+  },
+]
+
 export function CaseHeadingOutput({ caseType, caseDigit, caseYear, language }) {
   console.log(caseType)
 

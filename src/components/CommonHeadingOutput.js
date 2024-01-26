@@ -1,5 +1,5 @@
 import { TopRight } from "./TopRight"
-import { CourtHeading } from "./CourtHeading"
+import { CourtHeadingOuput } from "./CourtHeading"
 import { DisplayParties } from "./PartiesDisplay"
 import { AffirmationTitleOutput } from "./AffirmationTitleOutput"
 import { CaseHeadingOutput } from "./CaseNumberHeading"
@@ -35,7 +35,7 @@ export function CommonHeading({
       />
       <Language {...{ language, setLanguage }} />
       <div>
-        <CourtHeading
+        <CourtHeadingOuput
           {...{
             language,
           }}
