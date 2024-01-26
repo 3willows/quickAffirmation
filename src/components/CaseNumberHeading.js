@@ -10,7 +10,7 @@ const highCourtcaseTypes = [
     English: "INTENDED ACTION",
   },
   {
-    Chinese: "高院雜項案件",
+    Chinese: "雜項案件",
     English: "MISCELLANEOUS PROCEEDINGS",
   },
   {
