@@ -7,14 +7,15 @@ import {
   CaseDigit,
   CaseYear,
 } from "./components/CaseNumberHeading"
-import { AffirmationTitle } from "./components/AffirmationTitle"
-import { EndMatters } from "./components/EndMatters"
+import { AffirmationTitle } from "./components/AffirmationTitleInput"
+import { EndMatters } from "./components/OuputEndMatter"
 import { TopRight } from "./components/TopRight"
-import { Output } from "./components/Output"
+import { Output } from "./components/OverallOutput"
 import { Parties } from "./components/PartiesLogic"
 import { DisplayParties } from "./components/PartiesDisplay"
 import { formattedDate } from "./components/helpers/TodayDate"
 import { PopUpContent } from "./components/popup/PopUpContent"
+import { AffirmationBody } from "./components/AffirmationBodyInput"
 
 const initialPs = []
 const initialDs = []
@@ -106,25 +107,31 @@ function App() {
           />
           <AffirmationBody {...{ deponentName, language }} />
           <EndMatters
-            partyName={partyName}
-            setPartyName={setPartyName}
-            date={date}
-            setDate={setDate}
-            handleFocus={handleFocus}
+            {...{
+              partyName,
+              setPartyName,
+              date,
+              setDate,
+              handleFocus,
+              language,
+            }}
           />
         </div>
       )}
       {!inputOpen && (
         <Output
-          caseType={caseType}
-          caseDigit={caseDigit}
-          caseYear={caseYear}
-          affirmNumber={affirmNumber}
-          deponentName={deponentName}
-          date={date}
-          partyName={partyName}
-          plaintiffs={plaintiffs}
-          defendants={defendants}
+          {...{
+            caseType,
+            caseDigit,
+            caseYear,
+            affirmNumber,
+            deponentName,
+            date,
+            partyName,
+            plaintiffs,
+            defendants,
+            language,
+          }}
         />
       )}
       <ToggleButtons inputOpen={inputOpen} setInputOpen={setInputOpen} />
@@ -178,29 +185,6 @@ function Language({ language, setLanguage }) {
         <option value="English">English</option>
         <option value="Chinese">中文</option>
       </select>
-    </div>
-  )
-}
-
-function AffirmationBody({ deponentName, language }) {
-  return (
-    <div>
-      <p className="go-left">
-        {language === "Chinese" ? (
-          <>
-            本人{deponentName}, of [address] do solemnly, truthfully and
-            sincerely affirm and say as follows:-
-          </>
-        ) : (
-          <>
-            I, {deponentName}, of [address] do solemnly, truthfully and
-            sincerely affirm and say as follows:-
-          </>
-        )}
-      </p>
-      <p></p>
-      [Body of Affirmation]
-      <p></p>
     </div>
   )
 }
