@@ -31,7 +31,7 @@ https://github.com/3willows/quickAffirmation/assets/111284156/1dbe2678-772d-431d
 ## Known issues
 
 
-- [ ] Case type is reset after revising.
+- [x] Case type is reset after revising.
 
 ## Not included
 - Information that appears only once (e.g. firm name)
