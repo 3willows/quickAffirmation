@@ -1,23 +1,23 @@
 import React, { useEffect } from "react"
 export function CourtHeadingInput({ court, setCourt, language, setCaseType }) {
-  
-  useEffect(() => {
-    court === "HC" && setCaseType("A")
-    court === "DC" && setCaseType("CJ")
-  }, [court, setCaseType])
+  // useEffect(() => {
+  //   court === "HC" && setCaseType("A")
+  //   court === "DC" && setCaseType("CJ")
+  // }, [court, setCaseType])
 
   return language === "Chinese" ? (
     <div>
       <p>香港特別行政區</p>
       <p>
-        <ForumChoice {...{ court, setCourt, language }} />
+        <ForumChoice {...{ court, setCourt, language, setCaseType }} />
       </p>
       <p>民事司法管轄權</p>
     </div>
   ) : (
     <div>
       <p>
-        IN THE <ForumChoice {...{ court, setCourt, language }} /> OF THE
+        IN THE <ForumChoice {...{ court, setCourt, language, setCaseType }} />{" "}
+        OF THE
       </p>
       <p>HONG KONG SPECIAL ADMINISTRATIVE REGION</p>
       {court === "HC" && <p>COURT OF FIRST INSTANCE</p>}
@@ -51,8 +51,10 @@ export function CourtHeadingOuput({ court, language }) {
   )
 }
 
-function ForumChoice({ court, setCourt, language }) {
+function ForumChoice({ court, setCourt, language, setCaseType }) {
   function handleChangeCourt(e) {
+    court === "HC" && setCaseType("CJ")
+    court === "DC" && setCaseType("A")
     setCourt((prevCourt) => e.target.value)
   }
   return (
