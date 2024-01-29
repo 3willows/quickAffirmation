@@ -1,3 +1,4 @@
+import React, { useEffect } from "react"
 import { highCourtcaseTypes } from "./HighCourtcaseTypes"
 import { districtCourtcaseTypes } from "./DistrictCourtcaseTypes"
 
@@ -8,25 +9,27 @@ export function CaseHeadingOutput({
   language,
   court,
 }) {
-  const selectedCase = (
-    court === "HC" &&
-    highCourtcaseTypes.find((element) => element.abbrev === caseType)
-  )(
-    court === "DC" &&
-      districtCourtcaseTypes.find((element) => element.abbrev === caseType)
+  const selectedHcCase = highCourtcaseTypes.find(
+    (element) => element.abbrev === caseType
   )
+
+  const selectedDcCase = districtCourtcaseTypes.find(
+    (element) => element.abbrev === caseType
+  )
+
+  const selectedCase = selectedHcCase || selectedDcCase
 
   return (
     <>
       {language === "Chinese" && (
         <>
-          {selectedCase[language]}編號{caseYear}年{caseDigit}號
+          {selectedCase[language]?.trim()}
+          編號{caseYear}年{caseDigit}號
         </>
       )}
       {language === "English" && (
         <>
-          {" "}
-          {selectedCase[language]} NO. {caseDigit} OF {caseYear}
+          {selectedCase[language]?.trim()} NO. {caseDigit} OF {caseYear}
         </>
       )}
     </>
@@ -34,6 +37,11 @@ export function CaseHeadingOutput({
 }
 
 export function CaseType({ caseType, setCaseType, language, court }) {
+  useEffect(() => {
+    court === "HC" && setCaseType("A")
+    court === "DC" && setCaseType("CJ")
+  }, [court])
+
   return (
     <>
       {court === "HC" && (
