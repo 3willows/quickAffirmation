@@ -38,6 +38,7 @@ export function AffirmationInput({
     <div className="inputComponents">
       <TopRight
         {...{
+          court,
           caseType,
           caseDigit,
           caseYear,
@@ -53,14 +54,14 @@ export function AffirmationInput({
       <CourtHeadingInput {...{ court, setCourt, language }} />
       {language === "Chinese" ? (
         <>
-          <CaseType {...{ caseType, setCaseType, language }} />
+          <CaseType {...{ court, caseType, setCaseType, language }} />
           編號
           <CaseYear {...{ caseYear, setCaseYear, handleFocus }} />年
           <CaseDigit {...{ caseDigit, setCaseDigit, handleFocus }} />號
         </>
       ) : (
         <>
-          <CaseType {...{ caseType, setCaseType, language }} />
+          <CaseType {...{ court, caseType, setCaseType, language }} />
           NO.
           <CaseDigit {...{ caseDigit, setCaseDigit, handleFocus }} />
           OF

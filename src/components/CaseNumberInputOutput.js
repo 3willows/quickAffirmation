@@ -1,9 +1,21 @@
 import { highCourtcaseTypes } from "./HighCourtcaseTypes"
+import { districtCourtcaseTypes } from "./DistrictCourtcaseTypes"
 
-export function CaseHeadingOutput({ caseType, caseDigit, caseYear, language }) {
-  const selectedCase = highCourtcaseTypes.find(
-    (element) => element.abbrev === caseType
+export function CaseHeadingOutput({
+  caseType,
+  caseDigit,
+  caseYear,
+  language,
+  court,
+}) {
+  const selectedCase = (
+    court === "HC" &&
+    highCourtcaseTypes.find((element) => element.abbrev === caseType)
+  )(
+    court === "DC" &&
+      districtCourtcaseTypes.find((element) => element.abbrev === caseType)
   )
+
   return (
     <>
       {language === "Chinese" && (
@@ -21,16 +33,27 @@ export function CaseHeadingOutput({ caseType, caseDigit, caseYear, language }) {
   )
 }
 
-export function CaseType({ caseType, setCaseType, language }) {
+export function CaseType({ caseType, setCaseType, language, court }) {
   return (
     <>
-      <select value={caseType} onChange={(e) => setCaseType(e.target.value)}>
-        {highCourtcaseTypes.map((option) => (
-          <option key={option.English} value={option.abbrev}>
-            {language === "Chinese" ? option.Chinese : option.English}
-          </option>
-        ))}
-      </select>
+      {court === "HC" && (
+        <select value={caseType} onChange={(e) => setCaseType(e.target.value)}>
+          {highCourtcaseTypes.map((option) => (
+            <option key={option.English} value={option.abbrev}>
+              {language === "Chinese" ? option.Chinese : option.English}
+            </option>
+          ))}
+        </select>
+      )}
+      {court === "DC" && (
+        <select value={caseType} onChange={(e) => setCaseType(e.target.value)}>
+          {districtCourtcaseTypes.map((option) => (
+            <option key={option.English} value={option.abbrev}>
+              {language === "Chinese" ? option.Chinese : option.English}
+            </option>
+          ))}
+        </select>
+      )}
     </>
   )
 }
@@ -58,4 +81,3 @@ export function CaseYear({ caseYear, setCaseYear, handleFocus }) {
     ></input>
   )
 }
-

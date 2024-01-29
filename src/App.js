@@ -12,7 +12,7 @@ const initialDs = []
 function App() {
   const [language, setLanguage] = useState("English")
 
-  const [court, setCourt] = useState("CFI")
+  const [court, setCourt] = useState("HC")
 
   const [caseType, setCaseType] = useState("A")
   const [caseDigit, setCaseDigit] = useState("#")
@@ -66,6 +66,7 @@ function App() {
       {!inputOpen && (
         <AffirmationOutput
           {...{
+            court,
             caseType,
             caseDigit,
             caseYear,

@@ -17,6 +17,7 @@ export function CommonHeading({
   partyName,
   language,
   setLanguage,
+  court,
 }) {
   return (
     <div>
@@ -30,6 +31,7 @@ export function CommonHeading({
           date,
           partyName,
           language,
+          court,
         }}
         className="top-right"
       />
@@ -46,6 +48,7 @@ export function CommonHeading({
             caseDigit,
             caseYear,
             language,
+            court,
           }}
         />
       </div>

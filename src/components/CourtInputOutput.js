@@ -3,17 +3,17 @@ export function CourtHeadingInput({ court, setCourt, language }) {
     <div>
       <p>香港特別行政區</p>
       <p>
-        <ForumChoice {...{ court, setCourt }} />
+        <ForumChoice {...{ court, setCourt, language }} />
       </p>
       <p>民事司法管轄權</p>
     </div>
   ) : (
     <div>
       <p>
-        IN THE <ForumChoice {...{ court, setCourt }} /> OF THE
+        IN THE <ForumChoice {...{ court, setCourt, language }} /> OF THE
       </p>
       <p>HONG KONG SPECIAL ADMINISTRATIVE REGION</p>
-      <p>COURT OF FIRST INSTANCE</p>
+      {court === "HC" && <p>COURT OF FIRST INSTANCE</p>}
     </div>
   )
 }
@@ -21,18 +21,35 @@ export function CourtHeadingOuput({ court, language }) {
   return language === "Chinese" ? (
     <div>
       <p>香港特別行政區</p>
-      <p>高等法院原訟法庭</p>
-      <p>民事司法管轄權</p>
+      {court === "HC" && (
+        <>
+          <p>高等法院原訟法庭</p> <p>民事司法管轄權</p>
+        </>
+      )}
     </div>
   ) : (
     <div>
       <p>IN THE HIGH COURT OF THE</p>
       <p>HONG KONG SPECIAL ADMINISTRATIVE REGION</p>
-      <p>COURT OF FIRST INSTANCE</p>
+      {court === "HC" && <p>COURT OF FIRST INSTANCE</p>}
     </div>
   )
 }
 
-function ForumChoice({ court, setCourt }) {
-  return <>{court}</>
+function ForumChoice({ court, setCourt, language }) {
+  function handleChangeCourt(e) {
+    setCourt((prevCourt) => e.target.value)
+  }
+  return (
+    <>
+      <select value={court} onChange={(e) => handleChangeCourt(e)}>
+        <option value="HC">
+          {language === "Chinese" ? "高等法院原訟法庭" : "HIGH COURT"}
+        </option>
+        <option value="DC">
+          {language === "Chinese" ? "區域法院" : "DISTRICT COURT"}
+        </option>
+      </select>
+    </>
+  )
 }

@@ -14,6 +14,7 @@ export function AffirmationOutput({
   defendants,
   language,
   setLanguage,
+  court
 }) {
   return (
     <div className="output">
@@ -28,6 +29,7 @@ export function AffirmationOutput({
       >
         <CommonHeading
           {...{
+            court,
             caseType,
             caseDigit,
             caseYear,
@@ -46,6 +48,7 @@ export function AffirmationOutput({
       <Backsheet {...{ date, partyName, language }}>
         <CommonHeading
           {...{
+            court,
             caseType,
             caseDigit,
             caseYear,

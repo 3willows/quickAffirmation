@@ -7,11 +7,12 @@ export function TopRight({
   partyName,
   date,
   language,
+  court,
 }) {
   return (
     <div className="top-right">
       <p>
-        HC
+        {court}
         {caseType} {caseDigit}/{caseYear}
       </p>
       <p>
