@@ -1,8 +1,8 @@
-import { Backsheet } from "./Backsheet"
+import { Backsheet } from "./BacksheetOutput"
 import { AffirmationBody } from "./AffirmationBodyOutput"
 import { CommonHeading } from "./CommonHeadingOutput"
 
-export function Output({
+export function AffirmationOutput({
   caseType,
   caseDigit,
   caseYear,
