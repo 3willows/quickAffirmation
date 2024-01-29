@@ -19,18 +19,6 @@ body {
   color: black;
 }
 
-@media only screen and (max-width: 300px) {
-
-  /* Font size for screens smaller than 768px (e.g., mobile screens) */
-  * {
-    font-size: 14px;
-  }
-
-  body {
-    margin: 5% 5%;
-  }
-}
-
 select {
   max-width: 80%;
   /* Set the height of select boxes */
