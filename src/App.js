@@ -51,72 +51,33 @@ function App() {
     <div className="App">
       <PopUpContent />
       {inputOpen && (
-        <div className="inputComponents">
-          <TopRight
-            {...{
-              caseType,
-              caseDigit,
-              caseYear,
-              affirmNumber,
-              deponentName,
-              date,
-              partyName,
-              language,
-            }}
-          />
-          <Language {...{ language, setLanguage }} />
-          <CommonHeadingInput>
-            <CourtHeadingInput {...{ court, setCourt, language }} />
-            {language === "Chinese" ? (
-              <>
-                <CaseType {...{ caseType, setCaseType, language }} />
-                編號
-                <CaseYear {...{ caseYear, setCaseYear, handleFocus }} />年
-                <CaseDigit {...{ caseDigit, setCaseDigit, handleFocus }} />號
-              </>
-            ) : (
-              <>
-                <CaseType {...{ caseType, setCaseType, language }} />
-                NO.
-                <CaseDigit {...{ caseDigit, setCaseDigit, handleFocus }} />
-                OF
-                <CaseYear {...{ caseYear, setCaseYear, handleFocus }} />
-              </>
-            )}
-          </CommonHeadingInput>
-          <Parties
-            {...{
-              plaintiffs,
-              defendants,
-              setPlaintiffs,
-              setDefendants,
-              language,
-            }}
-          >
-            <DisplayParties {...{ plaintiffs, defendants, language }} />
-          </Parties>
-          <AffirmationTitle
-            {...{
-              affirmNumber,
-              deponentName,
-              setAffirmNumber,
-              setDeponentName,
-              handleFocus,
-              language,
-            }}
-          />
-          <AffirmationBody {...{ deponentName, language }} />
-          <EndMatters
-            {...{
-              partyName,
-              setPartyName,
-              date,
-              setDate,
-              handleFocus,
-              language,
-            }}
-          />
-        </div>
+        <AffirmationInput
+          {...{
+            caseType,
+            setCaseType,
+            caseDigit,
+            setCaseDigit,
+            caseYear,
+            setCaseYear,
+            affirmNumber,
+            deponentName,
+            date,
+            setDate,
+            partyName,
+            setPartyName,
+            language,
+            setLanguage,
+            court,
+            setCourt,
+            setAffirmNumber,
+            setDeponentName,
+            handleFocus,
+            plaintiffs,
+            defendants,
+            setPlaintiffs,
+            setDefendants,
+          }}
+        />
       )}
       {!inputOpen && (
         <Output
@@ -174,6 +135,105 @@ function ToggleButtons({ inputOpen, setInputOpen }) {
       <button className="large-button" onClick={toggleInputOpen}>
         {inputOpen ? `OUTPUT` : `REVISE`}
       </button>
+    </div>
+  )
+}
+
+function AffirmationInput({
+  caseType,
+  setCaseType,
+  caseDigit,
+  setCaseDigit,
+  caseYear,
+  setCaseYear,
+  affirmNumber,
+  deponentName,
+  date,
+  setDate,
+  partyName,
+  setPartyName,
+  language,
+  setLanguage,
+  court,
+  setCourt,
+  setAffirmNumber,
+  setDeponentName,
+  handleFocus,
+  plaintiffs,
+  defendants,
+  setPlaintiffs,
+  setDefendants,
+}) {
+  return (
+    <div>
+      (
+      <div className="inputComponents">
+        <TopRight
+          {...{
+            caseType,
+            caseDigit,
+            caseYear,
+            affirmNumber,
+            setAffirmNumber,
+            deponentName,
+            date,
+            partyName,
+            language,
+          }}
+        />
+        <Language {...{ language, setLanguage }} />
+        <CommonHeadingInput>
+          <CourtHeadingInput {...{ court, setCourt, language }} />
+          {language === "Chinese" ? (
+            <>
+              <CaseType {...{ caseType, setCaseType, language }} />
+              編號
+              <CaseYear {...{ caseYear, setCaseYear, handleFocus }} />年
+              <CaseDigit {...{ caseDigit, setCaseDigit, handleFocus }} />號
+            </>
+          ) : (
+            <>
+              <CaseType {...{ caseType, setCaseType, language }} />
+              NO.
+              <CaseDigit {...{ caseDigit, setCaseDigit, handleFocus }} />
+              OF
+              <CaseYear {...{ caseYear, setCaseYear, handleFocus }} />
+            </>
+          )}
+        </CommonHeadingInput>
+        <Parties
+          {...{
+            plaintiffs,
+            defendants,
+            setPlaintiffs,
+            setDefendants,
+            language,
+          }}
+        >
+          <DisplayParties {...{ plaintiffs, defendants, language }} />
+        </Parties>
+        <AffirmationTitle
+          {...{
+            affirmNumber,
+            deponentName,
+            setAffirmNumber,
+            setDeponentName,
+            handleFocus,
+            language,
+          }}
+        />
+        <AffirmationBody {...{ deponentName, language }} />
+        <EndMatters
+          {...{
+            partyName,
+            setPartyName,
+            date,
+            setDate,
+            handleFocus,
+            language,
+          }}
+        />
+      </div>
     </div>
   )
 }
