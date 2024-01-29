@@ -45,7 +45,7 @@ export function AffirmationOutput({
         />
       </AffirmationBody>
       ***** BACKSHEET ******
-      <Backsheet {...{ date, partyName, language }}>
+      <Backsheet {...{ date, partyName, language, setLanguage }}>
         <CommonHeading
           {...{
             court,
@@ -59,6 +59,7 @@ export function AffirmationOutput({
             defendants,
             partyName,
             language,
+            setLanguage
           }}
         />
       </Backsheet>

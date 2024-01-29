@@ -40,6 +40,7 @@ export function CommonHeading({
         <CourtHeadingOuput
           {...{
             language,
+            court,
           }}
         />
         <CaseHeadingOutput

@@ -26,10 +26,18 @@ export function CourtHeadingOuput({ court, language }) {
           <p>高等法院原訟法庭</p> <p>民事司法管轄權</p>
         </>
       )}
+      {court === "DC" && (
+        <>
+          <p>區域法院</p>
+        </>
+      )}
     </div>
   ) : (
     <div>
-      <p>IN THE HIGH COURT OF THE</p>
+      <p>
+        IN THE {court === "HC" && <>HIGH COURT</>}
+        {court === "DC" && <>DISTRICT COURT</>} OF THE
+      </p>
       <p>HONG KONG SPECIAL ADMINISTRATIVE REGION</p>
       {court === "HC" && <p>COURT OF FIRST INSTANCE</p>}
     </div>

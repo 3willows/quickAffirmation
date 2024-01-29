@@ -1,4 +1,4 @@
-export function Backsheet({ date, partyName, language, children }) {
+export function Backsheet({ date, partyName, language, setLanguage, children }) {
   return (
     <>
       {children}

@@ -17,7 +17,14 @@ export function CaseHeadingOutput({
     (element) => element.abbrev === caseType
   )
 
-  const selectedCase = selectedHcCase || selectedDcCase
+  let selectedCase = [{Chinese: "Error!", English: "Error", abbrev: "Error"}]
+
+  if (court === "HC") {
+    selectedCase = selectedHcCase
+  }
+  if (court === "DC") {
+    selectedCase = selectedDcCase
+  }
 
   return (
     <>
