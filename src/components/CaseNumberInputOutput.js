@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
-import { highCourtcaseTypes } from "./HighCourtcaseTypes"
-import { districtCourtcaseTypes } from "./DistrictCourtcaseTypes"
+import { highCourtcaseTypes } from "./caseTypes/HighCourtcaseTypes"
+import { districtCourtcaseTypes } from "./caseTypes/DistrictCourtcaseTypes"
 
 export function CaseHeadingOutput({
   caseType,
@@ -36,7 +36,7 @@ export function CaseHeadingOutput({
       )}
       {language === "English" && (
         <>
-          {selectedCase[language]?.trim()} NO. {caseDigit} OF {caseYear}
+          {selectedCase[language]?.trim().toUpperCase()} NO. {caseDigit} OF {caseYear}
         </>
       )}
     </>
@@ -64,7 +64,7 @@ export function CaseType({ caseType, setCaseType, language, court }) {
         <select value={caseType} onChange={(e) => setCaseType(e.target.value)}>
           {districtCourtcaseTypes.map((option) => (
             <option key={option.English} value={option.abbrev}>
-              {language === "Chinese" ? option.Chinese : option.English}
+              {language === "Chinese" ? option.Chinese : option.English.toUpperCase()}
             </option>
           ))}
         </select>
