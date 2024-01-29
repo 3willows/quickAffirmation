@@ -1,6 +1,5 @@
 import "./App.css"
 import React, { useState } from "react"
-import { CourtHeadingOuput } from "./components/CourtInputOutput"
 import { AffirmationOutput } from "./components/OverallOutput"
 import { formattedDate } from "./components/helpers/TodayDate"
 import { PopUpContent } from "./components/popup/PopUpContent"

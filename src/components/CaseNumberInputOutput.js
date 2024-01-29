@@ -1,4 +1,3 @@
-import React, { useEffect } from "react"
 import { highCourtcaseTypes } from "./caseTypes/HighCourtcaseTypes"
 import { districtCourtcaseTypes } from "./caseTypes/DistrictCourtcaseTypes"
 
@@ -44,10 +43,7 @@ export function CaseHeadingOutput({
 }
 
 export function CaseType({ caseType, setCaseType, language, court }) {
-  useEffect(() => {
-    court === "HC" && setCaseType("A")
-    court === "DC" && setCaseType("CJ")
-  }, [court])
+
 
   return (
     <>

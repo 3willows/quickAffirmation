@@ -1,4 +1,11 @@
-export function CourtHeadingInput({ court, setCourt, language }) {
+import React, { useEffect } from "react"
+export function CourtHeadingInput({ court, setCourt, language, setCaseType }) {
+  
+  useEffect(() => {
+    court === "HC" && setCaseType("A")
+    court === "DC" && setCaseType("CJ")
+  }, [court, setCaseType])
+
   return language === "Chinese" ? (
     <div>
       <p>香港特別行政區</p>

@@ -51,7 +51,7 @@ export function AffirmationInput({
         }}
       />
       <Language {...{ language, setLanguage }} />
-      <CourtHeadingInput {...{ court, setCourt, language }} />
+      <CourtHeadingInput {...{ court, setCourt, setCaseType, language }} />
       {language === "Chinese" ? (
         <>
           <CaseType {...{ court, caseType, setCaseType, language }} />

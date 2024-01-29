@@ -38,7 +38,7 @@ export function RemoveParty({
           }}
         >
           {parties.map((party) => (
-            <option value={party.name}>{party.name}</option>
+            <option value={party.name} key={party.name}>{party.name}</option>
           ))}
         </select>
       </form>
