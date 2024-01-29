@@ -23,12 +23,15 @@ https://github.com/3willows/quickAffirmation/assets/111284156/1dbe2678-772d-431d
 
 ## Planned future features
 
-- [x] Chinese input + output
-- [x] More case types (e.g. PI / EC)
-- [x] District Court heading
+
 - [ ] More party names (e.g. Applicant/Respondent etc) ideally responsive to the case type
 - [ ] A testing framework
 - [ ] Consistent naming of files/use of props v. children
+
+## Known issues
+
+
+- [ ] Case type is reset after revising.
 
 ## Not included
 - Information that appears only once (e.g. firm name)
@@ -43,5 +46,6 @@ https://github.com/3willows/quickAffirmation/assets/111284156/1dbe2678-772d-431d
 - [x] After input for P/D accepted, empty the relevant text input box
 - [x] Style with CSS: including moving the Plaintiffs/Defendants to the right.
 - [x] Add video to explain how to use.
-
-
+- [x] Chinese input + output
+- [x] More case types (e.g. PI / EC)
+- [x] District Court heading
