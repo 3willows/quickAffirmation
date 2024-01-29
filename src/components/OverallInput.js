@@ -1,6 +1,6 @@
 import React from "react"
-import { CourtHeadingInput } from "./CourtHeading"
-import { CaseType, CaseDigit, CaseYear } from "./CaseNumberHeading"
+import { CourtHeadingInput } from "./CourtInputOutput"
+import { CaseType, CaseDigit, CaseYear } from "./CaseNumberInputOutput"
 import { AffirmationTitle } from "./AffirmationTitleInput"
 import { EndMatters } from "./EndMattersInput.js"
 import { TopRight } from "./TopRight"
@@ -50,23 +50,23 @@ export function AffirmationInput({
         }}
       />
       <Language {...{ language, setLanguage }} />
-        <CourtHeadingInput {...{ court, setCourt, language }} />
-        {language === "Chinese" ? (
-          <>
-            <CaseType {...{ caseType, setCaseType, language }} />
-            編號
-            <CaseYear {...{ caseYear, setCaseYear, handleFocus }} />年
-            <CaseDigit {...{ caseDigit, setCaseDigit, handleFocus }} />號
-          </>
-        ) : (
-          <>
-            <CaseType {...{ caseType, setCaseType, language }} />
-            NO.
-            <CaseDigit {...{ caseDigit, setCaseDigit, handleFocus }} />
-            OF
-            <CaseYear {...{ caseYear, setCaseYear, handleFocus }} />
-          </>
-        )}
+      <CourtHeadingInput {...{ court, setCourt, language }} />
+      {language === "Chinese" ? (
+        <>
+          <CaseType {...{ caseType, setCaseType, language }} />
+          編號
+          <CaseYear {...{ caseYear, setCaseYear, handleFocus }} />年
+          <CaseDigit {...{ caseDigit, setCaseDigit, handleFocus }} />號
+        </>
+      ) : (
+        <>
+          <CaseType {...{ caseType, setCaseType, language }} />
+          NO.
+          <CaseDigit {...{ caseDigit, setCaseDigit, handleFocus }} />
+          OF
+          <CaseYear {...{ caseYear, setCaseYear, handleFocus }} />
+        </>
+      )}
       <Parties
         {...{
           plaintiffs,

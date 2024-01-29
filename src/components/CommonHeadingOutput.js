@@ -1,8 +1,8 @@
 import { TopRight } from "./TopRight"
-import { CourtHeadingOuput } from "./CourtHeading"
+import { CourtHeadingOuput } from "./CourtInputOutput"
 import { DisplayParties } from "./PartiesDisplay"
 import { AffirmationTitleOutput } from "./AffirmationTitleOutput"
-import { CaseHeadingOutput } from "./CaseNumberHeading"
+import { CaseHeadingOutput } from "./CaseNumberInputOutput"
 import { Language } from "./Language"
 
 export function CommonHeading({
@@ -16,7 +16,7 @@ export function CommonHeading({
   defendants,
   partyName,
   language,
-  setLanguage
+  setLanguage,
 }) {
   return (
     <div>

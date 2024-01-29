@@ -1,6 +1,6 @@
 import "./App.css"
 import React, { useState } from "react"
-import { CourtHeadingOuput } from "./components/CourtHeading"
+import { CourtHeadingOuput } from "./components/CourtInputOutput"
 import { AffirmationOutput } from "./components/OverallOutput"
 import { formattedDate } from "./components/helpers/TodayDate"
 import { PopUpContent } from "./components/popup/PopUpContent"
@@ -12,9 +12,9 @@ const initialDs = []
 function App() {
   const [language, setLanguage] = useState("English")
 
-  const [court, setCourt] = useState("Court of First Instance")
+  const [court, setCourt] = useState("CFI")
 
-  const [caseType, setCaseType] = useState("ACTION")
+  const [caseType, setCaseType] = useState("A")
   const [caseDigit, setCaseDigit] = useState("#")
   const [caseYear, setCaseYear] = useState("2024")
 
