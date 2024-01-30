@@ -61,10 +61,15 @@ button:active {
     font-size: 16px;
   }
 
+  .modal-content {
+    font-size: 16px;
+  }
+
   input,
   button,
   option {
-    font-size: 16px;  }
+    font-size: 16px;
+  }
 
 }
 
@@ -145,6 +150,7 @@ button:active {
 
 .modal-content {
   background: gray;
+  font-size: 22px;
   padding: 20px;
   border-radius: 8px;
   position: relative;
