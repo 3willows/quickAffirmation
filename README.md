@@ -1,8 +1,7 @@
 ## Why?
 
-- Quickly prototype an affirmation.
-- Save time by *not* entering deponent name and case number 4-5 times all over the place.
-- Intended users: HK lawyers/clerks/law students.
+- Generate a template for an affirmation immediately.
+- Save time by *not* entering deponent name and case number 4-5 times in different places.
 
 ## Try it [here](https://3willows.github.io/quickAffirmation/)
 
@@ -24,21 +23,17 @@ https://github.com/3willows/quickAffirmation/assets/111284156/1dbe2678-772d-431d
 ## Planned future features
 
 
-- [ ] More party names (e.g. Applicant/Respondent etc) ideally responsive to the case type
 - [ ] A testing framework
 - [ ] Consistent naming of files/use of props v. children
+- [ ] Other legal documents, e.g. summonses.
 
-## Known issues
-
-
-- [x] Case type is reset after revising.
 
 ## Not included
 - Information that appears only once (e.g. firm name)
 - Information that needs to be fill in when affirming/filing (e.g. indpendent solicitors who affirm; filing date)
 - Reminder about jurat rule (last page of affirmation cannot just be a signature page).
   
-## History
+## Changes made since deployment
 
 - [x] Deploy react version
 - [x] Think through the treatment of uppercase characters (i.e. use toUpperCase() consistently)
@@ -49,3 +44,6 @@ https://github.com/3willows/quickAffirmation/assets/111284156/1dbe2678-772d-431d
 - [x] Chinese input + output
 - [x] More case types (e.g. PI / EC)
 - [x] District Court heading
+- [x] More party names (e.g. Applicant/Respondent etc) ideally responsive to the case type
+- [x] Fix bug: case type is reset after revising.
+
