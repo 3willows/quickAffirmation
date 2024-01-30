@@ -33,11 +33,10 @@ export function DisplayParties({ plaintiffs, defendants, language, caseType }) {
 function DisplayOneSideParties({ OneSideParties, side, language, caseType }) {
   return (
     <div>
-      {language === "Chinese" ? (
-        <>
-          {OneSideParties.length === 0 && (
-            <div>
-              {" "}
+      {OneSideParties.length === 0 && (
+        <div>
+          {language === "Chinese" ? (
+            <>
               <span className="go-right">
                 <DisplayRoleName {...{ side, caseType, language }} />
               </span>
@@ -45,22 +44,17 @@ function DisplayOneSideParties({ OneSideParties, side, language, caseType }) {
                 {" "}
                 &ensp;[ <DisplayRoleName {...{ side, caseType, language }} />]
               </span>
-            </div>
-          )}
-        </>
-      ) : (
-        <>
-          {OneSideParties.length === 0 && (
-            <div>
+            </>
+          ) : (
+            <>
               {" "}
-              &ensp; [{side === "P" && `Plaintiff`}
-              {side === "D" && `Defendant`}]
+              &ensp; [<DisplayRoleName {...{ side, caseType, language }} />]
               <span className="go-right">
                 <DisplayRoleName {...{ side, caseType, language }} />
               </span>
-            </div>
+            </>
           )}
-        </>
+        </div>
       )}
       {OneSideParties.map((party, iterator) => (
         <Party

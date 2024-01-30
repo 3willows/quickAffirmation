@@ -53,7 +53,7 @@ export function CommonHeading({
           }}
         />
       </div>
-      <DisplayParties {...{ plaintiffs, defendants, language }} />
+      <DisplayParties {...{ plaintiffs, defendants, language, caseType }} />
       <p></p>{" "}
       <div className="affirm-box">
         <AffirmationTitleOutput
