@@ -1,6 +1,6 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-./src/App1.js
+/src/App1.js
 
 # dependencies
 /node_modules
