@@ -1,4 +1,5 @@
-import { Party, DisplayRoleName } from "./Party"
+import { Party } from "./Party"
+import { DisplayRoleName } from "./DisplayRoleName"
 
 export function DisplayParties({ plaintiffs, defendants, language, caseType }) {
   return (

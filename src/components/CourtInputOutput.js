@@ -1,9 +1,5 @@
 import React, { useEffect } from "react"
 export function CourtHeadingInput({ court, setCourt, language, setCaseType }) {
-  // useEffect(() => {
-  //   court === "HC" && setCaseType("A")
-  //   court === "DC" && setCaseType("CJ")
-  // }, [court, setCaseType])
 
   return language === "Chinese" ? (
     <div>
@@ -24,6 +20,7 @@ export function CourtHeadingInput({ court, setCourt, language, setCaseType }) {
     </div>
   )
 }
+
 export function CourtHeadingOuput({ court, language }) {
   return language === "Chinese" ? (
     <div>
