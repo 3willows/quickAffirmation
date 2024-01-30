@@ -1,6 +1,6 @@
-import { Party } from "./Party"
+import { Party, DisplayRoleName } from "./Party"
 
-export function DisplayParties({ plaintiffs, defendants, language }) {
+export function DisplayParties({ plaintiffs, defendants, language, caseType }) {
   return (
     <div className="go-left">
       {language === "Chinese" ? "" : `BETWEEN`}
@@ -8,7 +8,7 @@ export function DisplayParties({ plaintiffs, defendants, language }) {
       <DisplayOneSideParties
         OneSideParties={plaintiffs}
         side="P"
-        {...{ language }}
+        {...{ language, caseType }}
       />
       <p>
         {language === "Chinese" ? (
@@ -22,14 +22,14 @@ export function DisplayParties({ plaintiffs, defendants, language }) {
         <DisplayOneSideParties
           OneSideParties={defendants}
           side="D"
-          {...{ language }}
+          {...{ language, caseType }}
         />
       </div>
     </div>
   )
 }
 
-function DisplayOneSideParties({ OneSideParties, sideName, side, language }) {
+function DisplayOneSideParties({ OneSideParties, side, language, caseType }) {
   return (
     <div>
       {language === "Chinese" ? (
@@ -38,13 +38,11 @@ function DisplayOneSideParties({ OneSideParties, sideName, side, language }) {
             <div>
               {" "}
               <span className="go-right">
-                {side === "P" && `原告人`}
-                {side === "D" && `被告人`}
+                <DisplayRoleName {...{ side, caseType, language }} />
               </span>
               <span>
                 {" "}
-                &ensp;[{side === "P" && `原告人`}
-                {side === "D" && `被告人`}]
+                &ensp;[ <DisplayRoleName {...{ side, caseType, language }} />]
               </span>
             </div>
           )}
@@ -57,8 +55,7 @@ function DisplayOneSideParties({ OneSideParties, sideName, side, language }) {
               &ensp; [{side === "P" && `Plaintiff`}
               {side === "D" && `Defendant`}]
               <span className="go-right">
-                {side === "P" && `Plaintiff`.toUpperCase()}
-                {side === "D" && `Defendant`.toUpperCase()}
+                <DisplayRoleName {...{ side, caseType, language }} />
               </span>
             </div>
           )}
@@ -71,7 +68,7 @@ function DisplayOneSideParties({ OneSideParties, sideName, side, language }) {
           side={side}
           array={OneSideParties}
           key={party.name}
-          {...{ language }}
+          {...{ caseType, language }}
         />
       ))}
     </div>

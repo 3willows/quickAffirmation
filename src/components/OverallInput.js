@@ -77,7 +77,7 @@ export function AffirmationInput({
           language,
         }}
       >
-        <DisplayParties {...{ plaintiffs, defendants, language }} />
+        <DisplayParties {...{ plaintiffs, defendants, language, caseType }} />
       </Parties>
       <AffirmationTitle
         {...{
