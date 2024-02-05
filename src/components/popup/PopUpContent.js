@@ -38,7 +38,7 @@ export const PopUpContent = () => {
             Video demo
           </a>
         )}
-        <p>Works best on computer (not mobile). </p>
+        <p> </p>
         <a
           href="https://github.com/3willows/quickAffirmation
 "
