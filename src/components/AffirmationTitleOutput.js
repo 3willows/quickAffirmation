@@ -1,8 +1,13 @@
+import { useAppContext } from "./AppContext"
+
 export function AffirmationTitleOutput({
-  affirmNumber,
-  deponentName,
+
   language,
 }) {
+  const {
+    state: { affirmNumber, deponentName  },
+
+  } = useAppContext()
   return (
     <div className="affirm-box">
       {language === "Chinese" ? (

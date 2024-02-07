@@ -1,8 +1,7 @@
 import { useAppContext } from "./AppContext"
 
 export function EndMatters({ handleFocus }) {
-  const { state, dispatch } = useAppContext()
-  const { language, date, partyName } = state
+  const { state : { language, date, partyName }, dispatch } = useAppContext()
 
   return (
     <div className="go-left">

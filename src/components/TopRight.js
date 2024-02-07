@@ -1,5 +1,3 @@
-import { useAppContext } from "./AppContext"
-
 export function TopRight({
   caseType,
   caseDigit,
@@ -11,7 +9,7 @@ export function TopRight({
   language,
   court,
 }) {
-
+ 
   return (
     <div className="top-right">
       <p>

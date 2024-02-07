@@ -1,11 +1,13 @@
+import { useAppContext } from "./AppContext"
 
 export function AffirmationBody({
-  deponentName,
-  date,
-  partyName,
   language,
   children,
 }) {
+  const {
+    state: { deponentName , date,
+      partyName}
+  } = useAppContext()
   return (
     <>
       {children}

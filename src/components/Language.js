@@ -1,8 +1,8 @@
-import React, { useState } from "react"
+import React from "react"
 import { useAppContext } from "./AppContext"
 
 export function Language({ language, setLanguage }) {
-  const { state, dispatch } = useAppContext()
+  const { dispatch } = useAppContext()
   return (
     <div className="full-width-flexbox">
       <select

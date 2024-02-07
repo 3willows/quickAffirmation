@@ -10,12 +10,12 @@ const initialState = {
   caseType: "A",
   caseDigit: "#",
   caseYear: "2024",
-  plaintiffs: initialPs,
-  defendants: initialDs,
   affirmNumber: "1st",
   deponentName: "[Deponent]",
   partyName: "Plaintiff",
   date: formattedDate,
+  plaintiffs: initialPs,
+  defendants: initialDs,
   inputOpen: true,
 }
 
@@ -33,13 +33,21 @@ const reducer = (state, action) => {
       return { ...state, caseDigit: action.payload }
     case "SET_CASEYEAR":
       return { ...state, caseYear: action.payload }
-    // case "SET_INPUT_OPEN":
-    //   return { ...state, inputOpen: action.payload }
-    default:    case "SET_PLAINTIFF":
-      return { ...state, plaintiffs: [...state.plaintiffs, action.payload] }
+
+    case "SET_AFFIRMNO":
+      return { ...state, affirmNumber: action.payload }
+    case "SET_DEPONENTNAME":
+      return { ...state, deponentName: action.payload }
+    case "SET_PARTYNAME":
+      return { ...state, partyName: action.payload }
     case "SET_DATE":
       return { ...state, date: action.payload }
 
+
+    case "SET_PLAINTIFF":
+      return { ...state, plaintiffs: [...state.plaintiffs, action.payload] }
+
+    default:
       return state
   }
 }

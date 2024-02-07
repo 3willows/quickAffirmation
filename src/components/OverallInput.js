@@ -11,24 +11,24 @@ import { Language } from "./Language"
 import { useAppContext } from "./AppContext"
 
 export function AffirmationInput({
-  affirmNumber,
-  deponentName,
-  date,
-  setDate,
-  partyName,
-  setPartyName,
-
-  setAffirmNumber,
-  setDeponentName,
-  handleFocus,
   plaintiffs,
   defendants,
   setPlaintiffs,
   setDefendants,
+  handleFocus,
 }) {
   const {
-    state: { court, language, caseType, caseDigit, caseYear },
-    dispatch,
+    state: {
+      court,
+      language,
+      caseType,
+      caseDigit,
+      caseYear,
+      affirmNumber,
+      deponentName,
+      date,
+      partyName,
+    },
   } = useAppContext()
 
   return (
@@ -40,7 +40,6 @@ export function AffirmationInput({
           caseDigit,
           caseYear,
           affirmNumber,
-          setAffirmNumber,
           deponentName,
           date,
           partyName,
@@ -80,8 +79,6 @@ export function AffirmationInput({
         {...{
           affirmNumber,
           deponentName,
-          setAffirmNumber,
-          setDeponentName,
           handleFocus,
           language,
         }}
@@ -90,9 +87,7 @@ export function AffirmationInput({
       <EndMatters
         {...{
           partyName,
-          setPartyName,
           date,
-          setDate,
           handleFocus,
           language,
         }}

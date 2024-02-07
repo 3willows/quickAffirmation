@@ -44,7 +44,7 @@ export function CaseType({ language }) {
 }
 
 export function CaseDigit({ caseDigit, handleFocus }) {
-  const { state, dispatch } = useAppContext()
+  const { dispatch } = useAppContext()
 
   return (
     <input
@@ -60,7 +60,7 @@ export function CaseDigit({ caseDigit, handleFocus }) {
 }
 
 export function CaseYear({ caseYear, handleFocus }) {
-  const { state, dispatch } = useAppContext()
+  const { dispatch } = useAppContext()
 
   return (
     <input
@@ -78,7 +78,6 @@ export function CaseYear({ caseYear, handleFocus }) {
 export function CaseHeadingOutput({ language }) {
   const {
     state: { court, caseType, caseDigit, caseYear },
-    dispatch,
   } = useAppContext()
 
   const selectedHcCase = highCourtcaseTypes.find(

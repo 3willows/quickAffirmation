@@ -1,6 +1,10 @@
 import React from "react"
+import { useAppContext } from "./AppContext"
 
-export function AffirmationBody({ deponentName, language }) {
+export function AffirmationBody({  language }) {
+  const {
+    state: { deponentName }
+  } = useAppContext()
   return (
     <div>
       <p className="go-left">

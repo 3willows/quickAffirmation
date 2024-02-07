@@ -1,4 +1,9 @@
-export function Backsheet({ date, partyName, language, setLanguage, children }) {
+import { useAppContext } from "./AppContext"
+
+export function Backsheet({ language, children }) {
+  const {
+    state: { date, partyName },
+  } = useAppContext()
   return (
     <>
       {children}

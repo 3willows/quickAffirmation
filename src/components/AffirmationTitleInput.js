@@ -1,11 +1,11 @@
-export function AffirmationTitle({
-  affirmNumber,
-  setAffirmNumber,
-  deponentName,
-  setDeponentName,
-  handleFocus,
-  language,
-}) {
+import { useAppContext } from "./AppContext"
+
+export function AffirmationTitle({ handleFocus, language }) {
+  const {
+    state: { affirmNumber, deponentName  },
+    dispatch,
+  } = useAppContext()
+
   return (
     <div className="affirm-box">
       {language === "Chinese" ? (
@@ -13,14 +13,16 @@ export function AffirmationTitle({
           <input
             type="text"
             value={deponentName}
-            onChange={(e) => setDeponentName(e.target.value)}
+            onChange={(e) =>
+              dispatch({ type: "SET_DEPONENTNAME", payload: e.target.value })
+            }
             onFocus={handleFocus}
           ></input>{" "}
           的第
           <input
             type="text"
             value={affirmNumber}
-            onChange={(e) => setAffirmNumber(e.target.value)}
+            onChange={(e) =>   dispatch({ type: "SET_AFFIRMNO", payload: e.target.value })}
             className="digital"
             onFocus={handleFocus}
           ></input>
@@ -31,7 +33,7 @@ export function AffirmationTitle({
           <input
             type="text"
             value={affirmNumber}
-            onChange={(e) => setAffirmNumber(e.target.value)}
+            onChange={(e) => dispatch({ type: "SET_AFFIRMNO", payload: e.target.value })}
             className="digital"
             onFocus={handleFocus}
           ></input>
@@ -39,7 +41,7 @@ export function AffirmationTitle({
           <input
             type="text"
             value={deponentName}
-            onChange={(e) => setDeponentName(e.target.value)}
+            onChange={(e) =>    dispatch({ type: "SET_DEPONENTNAME", payload: e.target.value })}
             onFocus={handleFocus}
           ></input>
         </>

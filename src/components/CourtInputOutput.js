@@ -1,10 +1,9 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { useAppContext } from "./AppContext"
 
 export function CourtHeadingInput({ language }) {
   const {
     state: { court },
-    dispatch,
   } = useAppContext()
   return language === "Chinese" ? (
     <div>
@@ -18,33 +17,6 @@ export function CourtHeadingInput({ language }) {
     <div>
       <p>
         IN THE <ForumChoice {...{ court, language }} /> OF THE
-      </p>
-      <p>HONG KONG SPECIAL ADMINISTRATIVE REGION</p>
-      {court === "HC" && <p>COURT OF FIRST INSTANCE</p>}
-    </div>
-  )
-}
-
-export function CourtHeadingOuput({ court, language }) {
-  return language === "Chinese" ? (
-    <div>
-      <p>香港特別行政區</p>
-      {court === "HC" && (
-        <>
-          <p>高等法院原訟法庭</p> <p>民事司法管轄權</p>
-        </>
-      )}
-      {court === "DC" && (
-        <>
-          <p>區域法院</p>
-        </>
-      )}
-    </div>
-  ) : (
-    <div>
-      <p>
-        IN THE {court === "HC" && <>HIGH COURT</>}
-        {court === "DC" && <>DISTRICT COURT</>} OF THE
       </p>
       <p>HONG KONG SPECIAL ADMINISTRATIVE REGION</p>
       {court === "HC" && <p>COURT OF FIRST INSTANCE</p>}
@@ -74,5 +46,32 @@ function ForumChoice({ language }) {
         </option>
       </select>
     </>
+  )
+}
+
+export function CourtHeadingOuput({ court, language }) {
+  return language === "Chinese" ? (
+    <div>
+      <p>香港特別行政區</p>
+      {court === "HC" && (
+        <>
+          <p>高等法院原訟法庭</p> <p>民事司法管轄權</p>
+        </>
+      )}
+      {court === "DC" && (
+        <>
+          <p>區域法院</p>
+        </>
+      )}
+    </div>
+  ) : (
+    <div>
+      <p>
+        IN THE {court === "HC" && <>HIGH COURT</>}
+        {court === "DC" && <>DISTRICT COURT</>} OF THE
+      </p>
+      <p>HONG KONG SPECIAL ADMINISTRATIVE REGION</p>
+      {court === "HC" && <p>COURT OF FIRST INSTANCE</p>}
+    </div>
   )
 }
