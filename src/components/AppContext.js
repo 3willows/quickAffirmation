@@ -1,7 +1,6 @@
 import React, { createContext, useReducer, useContext } from "react"
 import { formattedDate } from "./helpers/TodayDate"
 
-
 const initialState = {
   language: "English",
   court: "HC",
@@ -41,11 +40,21 @@ const reducer = (state, action) => {
     case "SET_DATE":
       return { ...state, date: action.payload }
 
-
     case "ADD_P":
       return { ...state, plaintiffs: [...state.plaintiffs, action.payload] }
     case "ADD_D":
       return { ...state, defendants: [...state.defendants, action.payload] }
+
+    case "REMOVE_PARTY":
+      return {
+        ...state,
+        plaintiffs: state.plaintiffs.filter(
+          (party) => party.name !== action.payload
+        ),
+        defendants: state.defendants.filter(
+          (party) => party.name !== action.payload
+        ),
+      }
 
     default:
       return state
