@@ -4,21 +4,18 @@ import { CommonHeading } from "./CommonHeadingOutput"
 import { useAppContext } from "./AppContext"
 
 export function AffirmationOutput({
-  caseType,
-  caseDigit,
-  caseYear,
   affirmNumber,
   deponentName,
   date,
   partyName,
   plaintiffs,
   defendants,
-  court,
 }) {
   const {
-    state: { language },
+    state: { court, language, caseType, caseDigit, caseYear },
     dispatch,
   } = useAppContext()
+
   return (
     <div className="output">
       ***** BODY ******

@@ -27,13 +27,19 @@ const reducer = (state, action) => {
       return { ...state, language: action.payload }
     case "SET_COURT":
       return { ...state, court: action.payload }
-    case "SET_PLAINTIFF":
+    case "SET_CASETYPE":
+      return { ...state, caseType: action.payload }
+    case "SET_CASEDIGIT":
+      return { ...state, caseDigit: action.payload }
+    case "SET_CASEYEAR":
+      return { ...state, caseYear: action.payload }
+    // case "SET_INPUT_OPEN":
+    //   return { ...state, inputOpen: action.payload }
+    default:    case "SET_PLAINTIFF":
       return { ...state, plaintiffs: [...state.plaintiffs, action.payload] }
     case "SET_DATE":
       return { ...state, date: action.payload }
-    case "SET_INPUT_OPEN":
-      return { ...state, inputOpen: action.payload }
-    default:
+
       return state
   }
 }

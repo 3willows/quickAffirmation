@@ -1,19 +1,23 @@
 import React, { useEffect } from "react"
-export function CourtHeadingInput({ court, setCourt, language, setCaseType }) {
+import { useAppContext } from "./AppContext"
 
+export function CourtHeadingInput({ language }) {
+  const {
+    state: { court },
+    dispatch,
+  } = useAppContext()
   return language === "Chinese" ? (
     <div>
       <p>香港特別行政區</p>
       <p>
-        <ForumChoice {...{ court, setCourt, language, setCaseType }} />
+        <ForumChoice {...{ court, language }} />
       </p>
       <p>民事司法管轄權</p>
     </div>
   ) : (
     <div>
       <p>
-        IN THE <ForumChoice {...{ court, setCourt, language, setCaseType }} />{" "}
-        OF THE
+        IN THE <ForumChoice {...{ court, language }} /> OF THE
       </p>
       <p>HONG KONG SPECIAL ADMINISTRATIVE REGION</p>
       {court === "HC" && <p>COURT OF FIRST INSTANCE</p>}
@@ -48,11 +52,16 @@ export function CourtHeadingOuput({ court, language }) {
   )
 }
 
-function ForumChoice({ court, setCourt, language, setCaseType }) {
+function ForumChoice({ language }) {
+  const {
+    state: { court },
+    dispatch,
+  } = useAppContext()
+
   function handleChangeCourt(e) {
-    court === "HC" && setCaseType("CJ")
-    court === "DC" && setCaseType("A")
-    setCourt((prevCourt) => e.target.value)
+    court === "HC" && dispatch({ type: "SET_CASETYPE", payload: "CJ" })
+    court === "DC" && dispatch({ type: "SET_CASETYPE", payload: "A" })
+    dispatch({ type: "SET_COURT", payload: e.target.value })
   }
   return (
     <>

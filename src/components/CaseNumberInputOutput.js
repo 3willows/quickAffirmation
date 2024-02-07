@@ -1,13 +1,86 @@
 import { highCourtcaseTypes } from "./caseTypes/HighCourtcaseTypes"
 import { districtCourtcaseTypes } from "./caseTypes/DistrictCourtcaseTypes"
+import { useAppContext } from "./AppContext"
 
-export function CaseHeadingOutput({
-  caseType,
-  caseDigit,
-  caseYear,
-  language,
-  court,
-}) {
+export function CaseType({ language }) {
+  const {
+    state: { court, caseType },
+    dispatch,
+  } = useAppContext()
+  return (
+    <>
+      {court === "HC" && (
+        <select
+          value={caseType}
+          onChange={(e) =>
+            dispatch({ type: "SET_CASETYPE", payload: e.target.value })
+          }
+        >
+          {highCourtcaseTypes.map((option) => (
+            <option key={option.English} value={option.abbrev}>
+              {language === "Chinese" ? option.Chinese : option.English}
+            </option>
+          ))}
+        </select>
+      )}
+      {court === "DC" && (
+        <select
+          value={caseType}
+          onChange={(e) =>
+            dispatch({ type: "SET_CASETYPE", payload: e.target.value })
+          }
+        >
+          {districtCourtcaseTypes.map((option) => (
+            <option key={option.English} value={option.abbrev}>
+              {language === "Chinese"
+                ? option.Chinese
+                : option.English.toUpperCase()}
+            </option>
+          ))}
+        </select>
+      )}
+    </>
+  )
+}
+
+export function CaseDigit({ caseDigit, handleFocus }) {
+  const { state, dispatch } = useAppContext()
+
+  return (
+    <input
+      type="text"
+      value={caseDigit}
+      onChange={(e) =>
+        dispatch({ type: "SET_CASEDIGIT", payload: e.target.value })
+      }
+      className="digital"
+      onFocus={handleFocus}
+    ></input>
+  )
+}
+
+export function CaseYear({ caseYear, handleFocus }) {
+  const { state, dispatch } = useAppContext()
+
+  return (
+    <input
+      type="text"
+      value={caseYear}
+      onChange={(e) =>
+        dispatch({ type: "SET_CASEYEAR", payload: e.target.value })
+      }
+      className="digital"
+      onFocus={handleFocus}
+    ></input>
+  )
+}
+
+export function CaseHeadingOutput({ language }) {
+  const {
+    state: { court, caseType, caseDigit, caseYear },
+    dispatch,
+  } = useAppContext()
+
   const selectedHcCase = highCourtcaseTypes.find(
     (element) => element.abbrev === caseType
   )
@@ -16,7 +89,7 @@ export function CaseHeadingOutput({
     (element) => element.abbrev === caseType
   )
 
-  let selectedCase = [{Chinese: "Error!", English: "Error", abbrev: "Error"}]
+  let selectedCase = [{ Chinese: "Error!", English: "Error", abbrev: "Error" }]
 
   if (court === "HC") {
     selectedCase = selectedHcCase
@@ -35,60 +108,10 @@ export function CaseHeadingOutput({
       )}
       {language === "English" && (
         <>
-          {selectedCase[language]?.trim().toUpperCase()} NO. {caseDigit} OF {caseYear}
+          {selectedCase[language]?.trim().toUpperCase()} NO. {caseDigit} OF{" "}
+          {caseYear}
         </>
       )}
     </>
-  )
-}
-
-export function CaseType({ caseType, setCaseType, language, court }) {
-
-
-  return (
-    <>
-      {court === "HC" && (
-        <select value={caseType} onChange={(e) => setCaseType(e.target.value)}>
-          {highCourtcaseTypes.map((option) => (
-            <option key={option.English} value={option.abbrev}>
-              {language === "Chinese" ? option.Chinese : option.English}
-            </option>
-          ))}
-        </select>
-      )}
-      {court === "DC" && (
-        <select value={caseType} onChange={(e) => setCaseType(e.target.value)}>
-          {districtCourtcaseTypes.map((option) => (
-            <option key={option.English} value={option.abbrev}>
-              {language === "Chinese" ? option.Chinese : option.English.toUpperCase()}
-            </option>
-          ))}
-        </select>
-      )}
-    </>
-  )
-}
-
-export function CaseDigit({ caseDigit, setCaseDigit, handleFocus }) {
-  return (
-    <input
-      type="text"
-      value={caseDigit}
-      onChange={(e) => setCaseDigit(e.target.value)}
-      className="digital"
-      onFocus={handleFocus}
-    ></input>
-  )
-}
-
-export function CaseYear({ caseYear, setCaseYear, handleFocus }) {
-  return (
-    <input
-      type="text"
-      value={caseYear}
-      onChange={(e) => setCaseYear(e.target.value)}
-      className="digital"
-      onFocus={handleFocus}
-    ></input>
   )
 }

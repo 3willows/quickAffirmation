@@ -5,19 +5,12 @@ import { AffirmationOutput } from "./components/OverallOutput"
 import { formattedDate } from "./components/helpers/TodayDate"
 import { PopUpContent } from "./components/popup/PopUpContent"
 import { AffirmationInput } from "./components/OverallInput"
+import { ToggleButtons } from "./components/ToggleButtons"
 
 const initialPs = []
 const initialDs = []
 
 function App() {
-  // const [language, setLanguage] = useState("English")
-
-  const [court, setCourt] = useState("HC")
-
-  const [caseType, setCaseType] = useState("A")
-  const [caseDigit, setCaseDigit] = useState("#")
-  const [caseYear, setCaseYear] = useState("2024")
-
   const [plaintiffs, setPlaintiffs] = useState(initialPs)
   const [defendants, setDefendants] = useState(initialDs)
 
@@ -38,24 +31,15 @@ function App() {
         {inputOpen && (
           <AffirmationInput
             {...{
-              caseType,
-              setCaseType,
-              caseDigit,
-              setCaseDigit,
-              caseYear,
-              setCaseYear,
-              affirmNumber,
-              deponentName,
-              date,
-              setDate,
-              partyName,
-              setPartyName,
-              // language,
-              // setLanguage,
-              court,
-              setCourt,
-              setAffirmNumber,
-              setDeponentName,
+              // affirmNumber,
+              // deponentName,
+              // date,
+              // setDate,
+              // partyName,
+              // setPartyName,
+              // setAffirmNumber,
+              // setDeponentName,
+
               handleFocus,
               plaintiffs,
               defendants,
@@ -67,18 +51,13 @@ function App() {
         {!inputOpen && (
           <AffirmationOutput
             {...{
-              court,
-              caseType,
-              caseDigit,
-              caseYear,
-              affirmNumber,
-              deponentName,
-              date,
-              partyName,
+              // affirmNumber,
+              // deponentName,
+              // date,
+              // partyName,
+
               plaintiffs,
               defendants,
-              // language,
-              // setLanguage,
             }}
           />
         )}
@@ -89,39 +68,3 @@ function App() {
 }
 
 export default App
-
-function ToggleButtons({ inputOpen, setInputOpen }) {
-  function toggleInputOpen(inputOpen) {
-    setInputOpen((inputOpen) => !inputOpen)
-    scrollToTop()
-  }
-
-  const [visible, setVisible] = useState(false)
-
-  const toggleVisible = () => {
-    const scrolled = document.documentElement.scrollTop
-    if (scrolled > 300) {
-      setVisible(true)
-    } else if (scrolled <= 300) {
-      setVisible(false)
-    }
-  }
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "auto",
-      /* you can also use 'auto' behaviour
-       in place of 'smooth' */
-    })
-  }
-
-  window.addEventListener("scroll", toggleVisible)
-  return (
-    <div>
-      <button className="large-button" onClick={toggleInputOpen}>
-        {inputOpen ? `OUTPUT` : `REVISE`}
-      </button>
-    </div>
-  )
-}

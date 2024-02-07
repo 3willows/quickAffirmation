@@ -8,7 +8,6 @@ export function Language({ language, setLanguage }) {
       <select
         value={language}
         onChange={(e) => {
-          // setLanguage(e.target.value)
           dispatch({ type: "SET_LANGUAGE", payload: e.target.value })
         }}
       >

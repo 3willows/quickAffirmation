@@ -11,20 +11,13 @@ import { Language } from "./Language"
 import { useAppContext } from "./AppContext"
 
 export function AffirmationInput({
-  caseType,
-  setCaseType,
-  caseDigit,
-  setCaseDigit,
-  caseYear,
-  setCaseYear,
   affirmNumber,
   deponentName,
   date,
   setDate,
   partyName,
   setPartyName,
-  court,
-  setCourt,
+
   setAffirmNumber,
   setDeponentName,
   handleFocus,
@@ -34,7 +27,7 @@ export function AffirmationInput({
   setDefendants,
 }) {
   const {
-    state: { language },
+    state: { court, language, caseType, caseDigit, caseYear },
     dispatch,
   } = useAppContext()
 
@@ -55,21 +48,21 @@ export function AffirmationInput({
         }}
       />
       <Language />
-      <CourtHeadingInput {...{ court, setCourt, setCaseType, language }} />
+      <CourtHeadingInput {...{ court, language }} />
       {language === "Chinese" ? (
         <>
-          <CaseType {...{ court, caseType, setCaseType, language }} />
+          <CaseType {...{ court, caseType, language }} />
           編號
-          <CaseYear {...{ caseYear, setCaseYear, handleFocus }} />年
-          <CaseDigit {...{ caseDigit, setCaseDigit, handleFocus }} />號
+          <CaseYear {...{ caseYear, handleFocus }} />年
+          <CaseDigit {...{ caseDigit, handleFocus }} />號
         </>
       ) : (
         <>
-          <CaseType {...{ court, caseType, setCaseType, language }} />
+          <CaseType {...{ court, caseType, language }} />
           NO.
-          <CaseDigit {...{ caseDigit, setCaseDigit, handleFocus }} />
+          <CaseDigit {...{ caseDigit, handleFocus }} />
           OF
-          <CaseYear {...{ caseYear, setCaseYear, handleFocus }} />
+          <CaseYear {...{ caseYear, handleFocus }} />
         </>
       )}
       <Parties
