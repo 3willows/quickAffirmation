@@ -3,9 +3,11 @@ import { AffirmationBody } from "./AffirmationBodyOutput"
 import { CommonHeading } from "./CommonHeadingOutput"
 import { useAppContext } from "./AppContext"
 
-export function AffirmationOutput({ plaintiffs, defendants }) {
+export function AffirmationOutput() {
   const {
     state: {
+      plaintiffs,
+      defendants,
       court,
       language,
       caseType,

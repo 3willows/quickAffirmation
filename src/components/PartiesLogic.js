@@ -1,14 +1,16 @@
 import { useState } from "react"
 import { AddParty, RemoveParty } from "./PartiesAddRemove"
+import { useAppContext } from "./AppContext"
 
 export function Parties({
   plaintiffs,
   defendants,
-  setPlaintiffs,
-  setDefendants,
+  // setPlaintiffs,
+  // setDefendants,
   children,
   language,
 }) {
+  const { dispatch } = useAppContext()
   const parties = [
     { name: "SELECT PARTY", key: "SELECT PARTY" },
     ...plaintiffs,
@@ -29,23 +31,30 @@ export function Parties({
     }
     if (parties.some((obj) => obj.name === newParty.name)) return
     if (parties.some((obj) => obj.name.toUpperCase() === newParty.name)) return
-    side === "P" && setPlaintiffs((plaintiffs) => [...plaintiffs, newParty])
-    side === "D" && setDefendants((defendants) => [...defendants, newParty])
+    side === "P" && dispatch({
+      type: "ADD_P",
+      payload:newParty 
+    })
+    side === "D" && dispatch({
+      type: "ADD_D",
+      payload:newParty 
+    })
     setNewParty({ name: "", key: "" })
   }
 
-  function removeParty(toRemove) {
-    setPlaintiffs((parties) =>
-      parties.filter((party) => party.name !== toRemove)
-    )
-    setDefendants((parties) =>
-      parties.filter((party) => party.name !== toRemove)
-    )
-  }
-  const handleRemoveParty = (e) => {
-    e.preventDefault()
-    removeParty(toRemove)
-  }
+  // function removeParty(toRemove) {
+  //   setPlaintiffs((parties) =>
+  //     parties.filter((party) => party.name !== toRemove)
+  //   )
+  //   setDefendants((parties) =>
+  //     parties.filter((party) => party.name !== toRemove)
+  //   )
+  // }
+
+  // const handleRemoveParty = (e) => {
+  //   e.preventDefault()
+  //   removeParty(toRemove)
+  // }
 
   return (
     <div className="go-left">
@@ -56,9 +65,9 @@ export function Parties({
           {...{ handleAddParty, side, setSide, handleInputChange, newParty }}
         />
 
-        <RemoveParty
+        {/* <RemoveParty
           {...{ toRemove, setToRemove, parties, handleRemoveParty, language }}
-        />
+        /> */}
 
         <AddParty
           partyType="D"

@@ -10,15 +10,11 @@ import { AffirmationBody } from "./AffirmationBodyInput"
 import { Language } from "./Language"
 import { useAppContext } from "./AppContext"
 
-export function AffirmationInput({
-  plaintiffs,
-  defendants,
-  setPlaintiffs,
-  setDefendants,
-  handleFocus,
-}) {
+export function AffirmationInput({ handleFocus }) {
   const {
     state: {
+      plaintiffs,
+      defendants,
       court,
       language,
       caseType,
@@ -68,8 +64,6 @@ export function AffirmationInput({
         {...{
           plaintiffs,
           defendants,
-          setPlaintiffs,
-          setDefendants,
           language,
         }}
       >
