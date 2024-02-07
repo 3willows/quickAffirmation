@@ -1,6 +1,7 @@
 import { Backsheet } from "./BacksheetOutput"
 import { AffirmationBody } from "./AffirmationBodyOutput"
 import { CommonHeading } from "./CommonHeadingOutput"
+import { useAppContext } from "./AppContext"
 
 export function AffirmationOutput({
   caseType,
@@ -12,10 +13,12 @@ export function AffirmationOutput({
   partyName,
   plaintiffs,
   defendants,
-  language,
-  setLanguage,
-  court
+  court,
 }) {
+  const {
+    state: { language },
+    dispatch,
+  } = useAppContext()
   return (
     <div className="output">
       ***** BODY ******
@@ -40,12 +43,11 @@ export function AffirmationOutput({
             defendants,
             partyName,
             language,
-            setLanguage,
           }}
         />
       </AffirmationBody>
       ***** BACKSHEET ******
-      <Backsheet {...{ date, partyName, language, setLanguage }}>
+      <Backsheet {...{ date, partyName, language }}>
         <CommonHeading
           {...{
             court,
@@ -59,7 +61,6 @@ export function AffirmationOutput({
             defendants,
             partyName,
             language,
-            setLanguage
           }}
         />
       </Backsheet>

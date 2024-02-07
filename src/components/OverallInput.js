@@ -8,6 +8,7 @@ import { Parties } from "./PartiesLogic"
 import { DisplayParties } from "./PartiesDisplay"
 import { AffirmationBody } from "./AffirmationBodyInput"
 import { Language } from "./Language"
+import { useAppContext } from "./AppContext"
 
 export function AffirmationInput({
   caseType,
@@ -22,8 +23,6 @@ export function AffirmationInput({
   setDate,
   partyName,
   setPartyName,
-  language,
-  setLanguage,
   court,
   setCourt,
   setAffirmNumber,
@@ -34,6 +33,11 @@ export function AffirmationInput({
   setPlaintiffs,
   setDefendants,
 }) {
+  const {
+    state: { language },
+    dispatch,
+  } = useAppContext()
+
   return (
     <div className="inputComponents">
       <TopRight
@@ -50,7 +54,7 @@ export function AffirmationInput({
           language,
         }}
       />
-      <Language {...{ language, setLanguage }} />
+      <Language />
       <CourtHeadingInput {...{ court, setCourt, setCaseType, language }} />
       {language === "Chinese" ? (
         <>

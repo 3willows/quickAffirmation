@@ -1,5 +1,6 @@
 import "./App.css"
 import React, { useState } from "react"
+import { AppProvider } from "./components/AppContext"
 import { AffirmationOutput } from "./components/OverallOutput"
 import { formattedDate } from "./components/helpers/TodayDate"
 import { PopUpContent } from "./components/popup/PopUpContent"
@@ -9,7 +10,7 @@ const initialPs = []
 const initialDs = []
 
 function App() {
-  const [language, setLanguage] = useState("English")
+  // const [language, setLanguage] = useState("English")
 
   const [court, setCourt] = useState("HC")
 
@@ -32,55 +33,57 @@ function App() {
 
   return (
     <div className="App">
-      <PopUpContent />
-      {inputOpen && (
-        <AffirmationInput
-          {...{
-            caseType,
-            setCaseType,
-            caseDigit,
-            setCaseDigit,
-            caseYear,
-            setCaseYear,
-            affirmNumber,
-            deponentName,
-            date,
-            setDate,
-            partyName,
-            setPartyName,
-            language,
-            setLanguage,
-            court,
-            setCourt,
-            setAffirmNumber,
-            setDeponentName,
-            handleFocus,
-            plaintiffs,
-            defendants,
-            setPlaintiffs,
-            setDefendants,
-          }}
-        />
-      )}
-      {!inputOpen && (
-        <AffirmationOutput
-          {...{
-            court,
-            caseType,
-            caseDigit,
-            caseYear,
-            affirmNumber,
-            deponentName,
-            date,
-            partyName,
-            plaintiffs,
-            defendants,
-            language,
-            setLanguage,
-          }}
-        />
-      )}
-      <ToggleButtons inputOpen={inputOpen} setInputOpen={setInputOpen} />
+      <AppProvider>
+        <PopUpContent />
+        {inputOpen && (
+          <AffirmationInput
+            {...{
+              caseType,
+              setCaseType,
+              caseDigit,
+              setCaseDigit,
+              caseYear,
+              setCaseYear,
+              affirmNumber,
+              deponentName,
+              date,
+              setDate,
+              partyName,
+              setPartyName,
+              // language,
+              // setLanguage,
+              court,
+              setCourt,
+              setAffirmNumber,
+              setDeponentName,
+              handleFocus,
+              plaintiffs,
+              defendants,
+              setPlaintiffs,
+              setDefendants,
+            }}
+          />
+        )}
+        {!inputOpen && (
+          <AffirmationOutput
+            {...{
+              court,
+              caseType,
+              caseDigit,
+              caseYear,
+              affirmNumber,
+              deponentName,
+              date,
+              partyName,
+              plaintiffs,
+              defendants,
+              // language,
+              // setLanguage,
+            }}
+          />
+        )}
+        <ToggleButtons inputOpen={inputOpen} setInputOpen={setInputOpen} />
+      </AppProvider>
     </div>
   )
 }
