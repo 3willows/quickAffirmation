@@ -47,3 +47,10 @@ https://github.com/3willows/quickAffirmation/assets/111284156/1dbe2678-772d-431d
 - [x] More party names (e.g. Applicant/Respondent etc) ideally responsive to the case type
 - [x] Fix bug: case type is reset after revising.
 
+
+* Typescript
+* Restructure the directory structure
+* i18n
+* Context library ( Redux ) Study purpose
+* Test Code
+* CSS (Daisy UI) (query compatability with html-css-export-word; likely to fix on that level)
