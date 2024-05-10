@@ -29,14 +29,17 @@ https://github.com/3willows/quickAffirmation/assets/111284156/1dbe2678-772d-431d
 - Other legal documents, including summons
 - Reminder about jurat rule (last page of affirmation cannot just be a signature page).
 
-## Development plan (with guidance from [Seongkuk](https://github.com/hsk-kr))
+## May 2024 evelopment plan (with guidance from [Seongkuk](https://github.com/hsk-kr))
 
+Done:
 - Migrate to Vite or something other CRA (to make development faster)
 
+To do:
 - Design separate components with StoryBook
 - CSS with Daisy UI (query compatability with html-css-export-word; likely to fix on that level)
 - Restructure the directory structure
 - Systematic internationalisation with [i18n](https://www.npmjs.com/package/i18n)
 - Rewrite in Typescript
 - Use a context library (e.g. Redux) mainly to be familiar with the toool
-- Add Test Code 
+- Add test code
+- Fix the deployment (consequent to migration to Vite)
