@@ -1,9 +1,15 @@
 ## Why?
 
 - Generate a template for an affirmation immediately.
-- Save time by *not* entering deponent name and case number 4-5 times in different places.
+- Save time by _not_ entering deponent name and case number 4-5 times in different places.
 
 ## Try it [here](https://3willows.github.io/quickAffirmation/)
+
+## Instructions
+
+1. Fill in the boxes, click "OUTPUT" button.
+2. The heading, endorsement and backsheet are automatically generated.
+3. Revisions can be made by clicking the "REVISE" button.
 
 ## Video demo
 
@@ -12,47 +18,25 @@ https://github.com/3willows/quickAffirmation/assets/111284156/1dbe2678-772d-431d
 <!-- [This mobile video demo is commented out](https://github.com/3willows/quickAffirmation/assets/111284156/1257b8af-6792-4155-951e-142d35f13611
 )-->
 
-## How?
 
+## Not included
 
-1. Fill in the boxes, click "OUTPUT" button.
-2. The heading, endorsement and  backsheet are automatically generated.
-3. Revisions can be made by clicking the "REVISE" button.
-
+- Information that needs to be fill in after the papers are printed (e.g. independent firm who attests the affirmation; filing date)
 
 ## Planned future features
 
-
-- [ ] A testing framework
-- [ ] Consistent naming of files/use of props v. children
-- [ ] Other legal documents, e.g. summonses.
-
-
-## Not included
-- Information that appears only once (e.g. firm name)
-- Information that needs to be fill in when affirming/filing (e.g. indpendent solicitors who affirm; filing date)
+- Provide a Word document to users, via [html-css-export-word](https://github.com/3willows/html-css-export-word),
+- Other legal documents, including summons
 - Reminder about jurat rule (last page of affirmation cannot just be a signature page).
-  
-## Changes made since deployment
 
-- [x] Deploy react version
-- [x] Think through the treatment of uppercase characters (i.e. use toUpperCase() consistently)
-- [x] Add pop-up.
-- [x] After input for P/D accepted, empty the relevant text input box
-- [x] Style with CSS: including moving the Plaintiffs/Defendants to the right.
-- [x] Add video to explain how to use.
-- [x] Chinese input + output
-- [x] More case types (e.g. PI / EC)
-- [x] District Court heading
-- [x] More party names (e.g. Applicant/Respondent etc) ideally responsive to the case type
-- [x] Fix bug: case type is reset after revising.
+## Development plan (with guidance from [Seongkuk](https://github.com/hsk-kr))
 
-## New development plan (May 2024)
+- Migrate to Vite or something other CRA (to make development faster)
 
-* CSS (Daisy UI) (query compatability with html-css-export-word; likely to fix on that level) -1st
-* Restructure the directory structure - 2nd
-* i18n -3rd
-* Typescript -4th
-* Context library ( Redux ) Study purpose -second last
-* Test Code -last
-* Migrate to Vite or something other CRA -last
+- Design separate components with StoryBook
+- CSS with Daisy UI (query compatability with html-css-export-word; likely to fix on that level)
+- Restructure the directory structure
+- Systematic internationalisation with [i18n](https://www.npmjs.com/package/i18n)
+- Rewrite in Typescript
+- Use a context library (e.g. Redux) mainly to be familiar with the toool
+- Add Test Code 
